@@ -1,0 +1,16 @@
+{
+  "channel": "skyblock",
+  "engineVersion": "0.1.0",
+  "appVersion": "0.1.0",
+  "appUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/skyblock-pack-1.20.15/Nexumons-Skyblock-app-0.1.0.zip",
+  "appSha256": "23d227f449717d37451446463fcdcb02f2f8ab2f36223f572a0fafb1c30336f9",
+  "modpackVersion": "1.20.15",
+  "modpackUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/skyblock-pack-1.20.15/Nexumons-Skyblock-client-1.20.15.zip",
+  "modpackSha256": "9f373c9b5ac00e1c511f517bd8d1f62bf678b3e49a0607d4f5ddbd6b48733431",
+  "mrpackUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/skyblock-pack-1.20.15/Nexumons-Skyblock-1.20.15.mrpack",
+  "minecraft": "1.21.1",
+  "fabricLoader": "0.17.3",
+  "cobblemon": "1.8.1",
+  "serverAddress": "127.0.0.1:25598",
+  "testOnly": true
+}

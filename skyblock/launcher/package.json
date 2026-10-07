@@ -1,0 +1,68 @@
+{
+  "name": "nexumons-skyblock-launcher",
+  "version": "0.1.0",
+  "description": "Launcher autonome Nexumons Skyblock",
+  "homepage": "./",
+  "main": "bootstrap.js",
+  "dependencies": {
+    "axios": "^1.7.0",
+    "electron-updater": "^6.8.9",
+    "extract-zip": "^2.0.1",
+    "lucide-react": "^0.400.0",
+    "minecraft-launcher-core": "^3.18.2",
+    "msmc": "^5.0.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "35.7.5",
+    "electron-builder": "26.0.12"
+  },
+  "build": {
+    "appId": "com.nexumons.skyblock.launcher",
+    "productName": "Nexumons Skyblock",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "bootstrap.js",
+      "electron/**",
+      "build/**",
+      "package.json"
+    ],
+    "mac": {
+      "target": [
+        "zip",
+        "dmg"
+      ],
+      "identity": null,
+      "category": "public.app-category.games"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "artifactName": "Nexumons-Skyblock-${version}-${os}-${arch}.${ext}"
+  }
+}
