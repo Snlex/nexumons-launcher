@@ -24,4 +24,7 @@ Ce pack correspond au serveur de test Fabric 1.21.1 / Cobblemon 1.8.1, pas au Ki
 4. Mettre à jour les URLs, versions et SHA-256 du manifeste, après vérification.
 5. Pour un changement du moteur, augmenter package.json et engineVersion, puis lancer GitHub Actions.
 
-Tests locaux : quatre tests de corruption, chemins, remplacement, réparation et restauration. Les builds natifs sont compilés sur GitHub Actions. Tests de connexion Microsoft et lancement natif restent à faire sur chaque OS.
+Tests locaux : quatre tests de corruption, chemins, remplacement, réparation et restauration. Windows x64 et Mac Apple Silicon ont été compilés localement puis publiés sur GitHub. Le workflow est préparé mais non publié ; aucun droit workflow n’a été ajouté. Le build Mac Intel reste à terminer. Tests de connexion Microsoft et lancement natif restent à faire sur chaque OS.
+
+## Interface 0.1.1
+Identité Skyblock dédiée : illustration de refuge flottant, palette turquoise/or, navigation supérieure, carnet de chapitres, dock de lancement, connexion Microsoft et accès test, réglages de mémoire et serveur intégrés. Déploiement via le bundle applicatif ; les installateurs 0.1.0 récupèrent cette version au prochain démarrage.

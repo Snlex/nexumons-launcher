@@ -32,7 +32,8 @@
   },
   "devDependencies": {
     "electron": "35.7.5",
-    "electron-builder": "26.0.12"
+    "electron-builder": "26.0.12",
+    "esbuild": "^0.25.12"
   },
   "build": {
     "appId": "com.nexumons.skyblock.launcher",

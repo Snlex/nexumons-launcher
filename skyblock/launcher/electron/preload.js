@@ -25,12 +25,3 @@ contextBridge.exposeInMainWorld('nexumons', {
   },
 });
 
-window.addEventListener('DOMContentLoaded', () => {
-  const bar=document.createElement('div');
-  bar.style.cssText='position:fixed;bottom:8px;left:16px;right:16px;z-index:9999;display:flex;gap:10px;align-items:center;background:#101323;padding:8px 12px;border-radius:8px;color:#aeb8d1;font:12px sans-serif';
-  const label=document.createElement('span');label.textContent='SKYBLOCK · Serveur';
-  const input=document.createElement('input');input.placeholder='127.0.0.1:25598 (test sur ce Mac)';input.style.cssText='flex:1;background:#070b14;color:#fff;border:1px solid #465377;border-radius:5px;padding:5px';
-  ipcRenderer.invoke('settings:get').then(s=>input.value=s.serverAddress||'');
-  input.addEventListener('change',()=>{const v=input.value.trim();if(!v||/^[a-zA-Z0-9.\-]+(:[0-9]{1,5})?$/.test(v))ipcRenderer.invoke('settings:save',{serverAddress:v});});
-  bar.append(label,input);document.body.append(bar);
-});

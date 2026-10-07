@@ -4,6 +4,7 @@ const MANIFEST='https://raw.githubusercontent.com/Snlex/nexumons-launcher/main/s
 app.setName('Nexumons Skyblock');
 const locked=app.requestSingleInstanceLock();if(!locked){app.quit();}else{
  app.whenReady().then(async()=>{
+  if(process.env.NEXUMONS_PREVIEW==='1'&&!app.isPackaged){require('./electron/main');return;}
   const root=path.join(app.getPath('appData'),'nexumons-skyblock-launcher','application');
   const status=new BrowserWindow({width:520,height:240,resizable:false,backgroundColor:'#101323',webPreferences:{nodeIntegration:false,contextIsolation:true}});
   await status.loadURL('data:text/html;charset=utf-8,'+encodeURIComponent('<body style="background:#101323;color:#e8eaff;font:18px sans-serif;padding:28px"><h2>Nexumons Skyblock</h2>Vérification des mises à jour GitHub…</body>'));
