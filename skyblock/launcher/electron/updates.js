@@ -11,7 +11,7 @@ async function validateTree(stage){
  }
  return listing;
 }
-async function syncArchive({root,url,version,sha256,dirs,download}){
+async function syncArchive({root,url,version,sha256,dirs,optionalDirs=[],download}){
  if(!/^[a-zA-Z0-9._-]+$/.test(version)||!/^[a-f0-9]{64}$/i.test(sha256))throw new Error('Version ou empreinte invalide');
  fs.mkdirSync(root,{recursive:true});
  const marker=path.join(root,'.managed-release.json');
@@ -26,11 +26,11 @@ async function syncArchive({root,url,version,sha256,dirs,download}){
   await download(url,archive);
   if(await hash(archive)!==sha256)throw new Error('Téléchargement corrompu : installation précédente conservée.');
   await extract(archive,{dir:stage});const listing=await validateTree(stage);
-  for(const name of Object.keys(listing.files))if(!dirs.some(d=>name.startsWith(d+'/')))throw new Error('Fichier hors des dossiers gérés');
+  for(const name of Object.keys(listing.files))if(![...dirs,...optionalDirs].some(d=>name.startsWith(d+'/')))throw new Error('Fichier hors des dossiers gérés');
   fs.rmSync(previous,{recursive:true,force:true});fs.mkdirSync(previous);
-  for(const dir of dirs){
+  for(const dir of [...dirs,...optionalDirs]){
    checkedRelative(dir);const target=path.join(root,dir),saved=path.join(previous,dir),incoming=path.join(stage,dir);
-   if(!fs.existsSync(incoming))throw new Error('Dossier absent : '+dir);
+   if(!fs.existsSync(incoming)){if(optionalDirs.includes(dir))continue;throw new Error('Dossier absent : '+dir);}
    const had=fs.existsSync(target);if(had)fs.renameSync(target,saved);
    changed.push({target,saved,had});fs.renameSync(incoming,target);
   }

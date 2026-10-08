@@ -200,15 +200,9 @@ async function withRetry(fn, { attempts = 3, label = '', win = null, stage = 'mo
 // ============ MODPACK ============
 async function syncModpack(win, gameDir, url, version, sha256) {
   const { syncArchive } = require('./updates');
-  await syncArchive({root:gameDir,url,version,sha256,dirs:['mods','resourcepacks'],
+  await syncArchive({root:gameDir,url,version,sha256,dirs:['mods','resourcepacks'],optionalDirs:['defaults'],
     download:async (u,p)=>downloadFile(u,p,win,'Modpack',{stage:'modpack',resume:false})});
-  const options=path.join(gameDir,'options.txt');
-  const text=fs.existsSync(options)?fs.readFileSync(options,'utf8'):'';
-  const match=text.match(/^resourcePacks:(.*)$/m);
-  let packs=['vanilla'];try{if(match)packs=JSON.parse(match[1]);}catch{}
-  if(!packs.includes('file/Nexumons-Astral.zip'))packs.push('file/Nexumons-Astral.zip');
-  const line='resourcePacks:'+JSON.stringify(packs);
-  fs.writeFileSync(options,match?text.replace(/^resourcePacks:.*$/m,line):text+'\n'+line+'\n');
+  require('./defaults').applyClientDefaults(gameDir);
   send(win,{stage:'modpack',percent:100,text:'Skyblock à jour ✓'});
 }
 
