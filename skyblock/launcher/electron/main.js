@@ -10,7 +10,7 @@ const { Client } = require('minecraft-launcher-core');
 
 
 // ============ CONFIG NEXUMONS ============
-let SERVER_IP = '127.0.0.1:25598';
+let SERVER_IP = '172.241.3.147:25585';
 const SERVER_LIST_NAME = '§d§lNEXUMONS §r§7· Skyblock';
 const MC_VERSION = '1.21.1';
 const FABRIC_LOADER = '0.17.3';
@@ -372,6 +372,10 @@ function launchAttempt(win, opts) {
 async function launchGame(win, { auth, ram }) {
   try {
     send(win, { stage: 'start', percent: 0, text: 'Préparation…' });
+    fs.mkdirSync(DATA_DIR, { recursive: true });
+    const disk = fs.statfsSync(DATA_DIR);
+    const freeGiB = Number(disk.bavail) * Number(disk.bsize) / (1024 ** 3);
+    if (freeGiB < 2) throw new Error(`Espace disque insuffisant : ${freeGiB.toFixed(1)} Go disponibles. Libère au moins 2 Go avant de lancer Minecraft.`);
 
     // Modpack : manifest distant (MAJ sans rebuild du launcher), sinon les valeurs en dur en fallback.
     const cache=path.join(DATA_DIR,'channel.json');
@@ -385,7 +389,7 @@ async function launchGame(win, { auth, ram }) {
       channel=JSON.parse(fs.readFileSync(cache,'utf8'));
       send(win,{stage:'modpack',percent:0,text:'GitHub indisponible : dernière version vérifiée en cache.'});
     }
-    SERVER_IP=loadSettings().serverAddress||channel.serverAddress;
+    SERVER_IP=channel.serverAddress;
     if(!SERVER_IP)throw new Error('Adresse du serveur manquante');
     const javaPath = await ensureJava(win);
     await syncModpack(win,GAME_DIR,channel.modpackUrl,channel.modpackVersion,channel.modpackSha256);
@@ -461,6 +465,7 @@ ipcMain.handle('system:info', () => {
   return { totalGB, suggested, maxRam };
 });
 ipcMain.handle('auth:offline', (_e, username) => {
+  return {ok:false,error:'Utilise la connexion Microsoft pour rejoindre le serveur public.'};
   if (!username || username.length < 3) return { ok: false, error: 'Pseudo trop court' };
   return { ok: true, profile: { name: username, uuid: offlineUUID(username), type: 'offline' }, auth: offlineAuth(username) };
 });

@@ -1,6 +1,6 @@
 {
   "name": "nexumons-skyblock-launcher",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Launcher autonome Nexumons Skyblock",
   "homepage": "./",
   "main": "bootstrap.js",
@@ -58,7 +58,8 @@
     "win": {
       "target": [
         "nsis"
-      ]
+      ],
+      "signAndEditExecutable": false
     },
     "nsis": {
       "oneClick": false,
