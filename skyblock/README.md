@@ -1,8 +1,8 @@
 # Nexumons Skyblock — distribution joueurs
 
-Serveur Kinetic 2 : **172.241.3.147:25585**. Minecraft 1.21.1, Fabric 0.17.3, Java 21, Cobblemon 1.7.3, correspondant au serveur vérifié le 8 octobre 2026.
+Serveur Kinetic 2 : **172.241.3.147:25585**. Minecraft 1.21.1, Fabric 0.17.3, Java 21, Cobblemon 1.8.1, Quest HUD 1.8.4, correspondant au test local déployé le 8 octobre 2026.
 
-[Téléchargements Windows, Mac et mrpack](https://github.com/Snlex/nexumons-launcher/releases/tag/skyblock-players-1.0.0)
+[Launchers Windows et Mac](https://github.com/Snlex/nexumons-launcher/releases/tag/skyblock-players-1.0.0) · [Pack joueurs et mrpack actuels](https://github.com/Snlex/nexumons-launcher/releases/tag/skyblock-players-1.0.1)
 
 Le launcher autonome ne nécessite ni Prism ni Modrinth. Connectez votre compte Microsoft puis cliquez sur Jouer : Java, les mods et l’adresse du serveur sont gérés automatiquement. Les mises à jour du pack et de l’interface sont téléchargées depuis GitHub et vérifiées par SHA-256. Un changement du moteur Electron nécessite un nouvel installateur.
 
