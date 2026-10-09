@@ -1,4 +1,5 @@
 const { app, BrowserWindow, ipcMain, shell } = require('electron');
+app.setName('PokéSky');
 const path = require('path');
 const os = require('os');
 const fs = require('fs');
@@ -11,7 +12,7 @@ const { Client } = require('minecraft-launcher-core');
 
 // ============ CONFIG NEXUMONS ============
 let SERVER_IP = '172.241.3.147:25585';
-const SERVER_LIST_NAME = '§d§lNEXUMONS §r§7· Skyblock';
+const SERVER_LIST_NAME = '§d§lPOKÉSKY §r§7· Cobblemon Skyblock';
 const MC_VERSION = '1.21.1';
 const FABRIC_LOADER = '0.17.3';
 // Source du modpack (zip Dropbox en dl=1). À mettre à jour à chaque nouvelle version du pack.
@@ -257,8 +258,14 @@ function buildServersDat(servers) {
 function ensureServerListed(gameDir) {
   const dat = path.join(gameDir, 'servers.dat');
   try {
-    // Déjà présent ? On ne touche pas (préserve d'éventuels serveurs ajoutés par le joueur).
-    if (fs.existsSync(dat) && fs.readFileSync(dat).includes(Buffer.from(SERVER_IP, 'utf8'))) return;
+    if (fs.existsSync(dat)) {
+      const before=fs.readFileSync(dat);
+      const {updateServerList}=require('./server-list');
+      const entry=Buffer.concat([nbtStringTag('name',SERVER_LIST_NAME),nbtStringTag('ip',SERVER_IP),nbtStringTag('icon',SERVER_ICON_B64),Buffer.from([0])]);
+      const after=updateServerList(before,SERVER_IP,SERVER_LIST_NAME,entry);
+      if(!before.equals(after)){fs.copyFileSync(dat,dat+'.pokesky-backup');fs.writeFileSync(dat+'.pending',after);fs.renameSync(dat+'.pending',dat);}
+      return;
+    }
     const buf = buildServersDat([{
       name: SERVER_LIST_NAME,
       ip: SERVER_IP,
@@ -432,6 +439,7 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1000,
     height: 640,
+    title: 'PokéSky',
     frame: false,
     resizable: false,
     backgroundColor: '#080912',

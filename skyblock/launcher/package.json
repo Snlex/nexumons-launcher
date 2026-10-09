@@ -1,7 +1,7 @@
 {
   "name": "nexumons-skyblock-launcher",
-  "version": "0.1.1",
-  "description": "Launcher autonome Nexumons Skyblock",
+  "version": "0.1.2",
+  "description": "Launcher autonome PokéSky",
   "homepage": "./",
   "main": "bootstrap.js",
   "dependencies": {
@@ -37,7 +37,7 @@
   },
   "build": {
     "appId": "com.nexumons.skyblock.launcher",
-    "productName": "Nexumons Skyblock",
+    "productName": "PokéSky",
     "directories": {
       "output": "dist"
     },
@@ -65,6 +65,6 @@
       "oneClick": false,
       "allowToChangeInstallationDirectory": true
     },
-    "artifactName": "Nexumons-Skyblock-${version}-${os}-${arch}.${ext}"
+    "artifactName": "PokeSky-${version}-${os}-${arch}.${ext}"
   }
 }
