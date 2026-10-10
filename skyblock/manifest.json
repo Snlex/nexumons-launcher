@@ -14,7 +14,7 @@
   "serverAddress": "172.241.3.147:25585",
   "testOnly": false,
   "serverName": "Cobbloria",
-  "website": "https://pokesky.alex-paumard.workers.dev",
+  "website": "https://cobbloria.com",
   "windowsUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/cobbloria-1.0.17/Cobbloria-0.2.6-win-x64.exe",
   "macArmUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/cobbloria-1.0.17/Cobbloria-0.2.6-mac-arm64.zip",
   "macIntelUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/cobbloria-1.0.17/Cobbloria-0.2.6-mac-x64.zip"
