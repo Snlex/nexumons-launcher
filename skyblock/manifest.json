@@ -1,9 +1,9 @@
 {
   "channel": "skyblock",
   "engineVersion": "0.1.0",
-  "appVersion": "0.2.3",
-  "appUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/skyblock-players-1.0.14/PokeSky-app-0.2.3.zip",
-  "appSha256": "6969881a5522f7317360bcae7983c24b93ed3a882d26fcde21b0233eb830a6f6",
+  "appVersion": "0.2.4",
+  "appUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/skyblock-app-0.2.4/PokeSky-app-0.2.4.zip",
+  "appSha256": "e7454854bf7f26a74d038e1ef3b400f29c691eeee0858cd0cfebb570caedf16e",
   "modpackVersion": "players-1.0.15",
   "modpackUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/skyblock-players-1.0.15/PokeSky-client-players-1.0.15.zip",
   "modpackSha256": "3db5108dc8cd97db4f785e74e527c6e620196e0e04aa0742f77c0ad1bc1c9671",
