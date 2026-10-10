@@ -13,6 +13,7 @@ contextBridge.exposeInMainWorld('nexumons', {
   // liens externes (site, discord)
   openExternal: (url) => ipcRenderer.send('open-external', url),
   // réglages
+  getServerStatus: () => ipcRenderer.invoke('server:status'),
   getSettings: () => ipcRenderer.invoke('settings:get'),
   saveSettings: (s) => ipcRenderer.invoke('settings:save', s),
   // infos système (RAM du PC) pour conseiller l'allocation

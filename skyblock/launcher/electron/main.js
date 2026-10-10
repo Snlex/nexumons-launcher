@@ -457,6 +457,12 @@ function createWindow() {
 ipcMain.on('window:minimize', () => mainWindow && mainWindow.minimize());
 ipcMain.on('window:close', () => mainWindow && mainWindow.close());
 ipcMain.on('open-external', (_e, url) => { if (/^https?:\/\//.test(url)) shell.openExternal(url); });
+let statusCache=null,statusAt=0,statusPending=null;
+ipcMain.handle('server:status',async()=>{
+ if(statusCache&&Date.now()-statusAt<15000)return statusCache;
+ if(!statusPending)statusPending=require('./server-status').queryStatus(SERVER_IP).then(value=>{statusCache=value;statusAt=Date.now();return value;}).finally(()=>{statusPending=null;});
+ return statusPending;
+});
 ipcMain.handle('settings:get', () => loadSettings());
 ipcMain.handle('settings:save', (_e, s) => saveSettings(s));
 // Détection RAM du PC → conseil d'allocation adapté (surtout pour les petits PC).
