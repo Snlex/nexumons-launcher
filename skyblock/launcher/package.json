@@ -1,7 +1,7 @@
 {
   "name": "nexumons-skyblock-launcher",
-  "version": "0.1.2",
-  "description": "Launcher autonome PokéSky",
+  "version": "0.2.6",
+  "description": "Launcher autonome Cobbloria",
   "homepage": "./",
   "main": "bootstrap.js",
   "dependencies": {
@@ -37,7 +37,7 @@
   },
   "build": {
     "appId": "com.nexumons.skyblock.launcher",
-    "productName": "PokéSky",
+    "productName": "Cobbloria",
     "directories": {
       "output": "dist"
     },
@@ -65,6 +65,6 @@
       "oneClick": false,
       "allowToChangeInstallationDirectory": true
     },
-    "artifactName": "PokeSky-${version}-${os}-${arch}.${ext}"
+    "artifactName": "Cobbloria-${version}-${os}-${arch}.${ext}"
   }
 }

@@ -1,5 +1,5 @@
 const { app, BrowserWindow, ipcMain, shell } = require('electron');
-app.setName('PokéSky');
+app.setName('Cobbloria');
 const path = require('path');
 const os = require('os');
 const fs = require('fs');
@@ -12,7 +12,7 @@ const { Client } = require('minecraft-launcher-core');
 
 // ============ CONFIG NEXUMONS ============
 let SERVER_IP = '172.241.3.147:25585';
-const SERVER_LIST_NAME = '§d§lPOKÉSKY §r§7· Cobblemon Skyblock';
+const SERVER_LIST_NAME = '§d§lCOBBLORIA §r§7· Cobblemon Skyblock';
 const MC_VERSION = '1.21.1';
 const FABRIC_LOADER = '0.19.5';
 // Source du modpack (zip Dropbox en dl=1). À mettre à jour à chaque nouvelle version du pack.
@@ -439,7 +439,7 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1000,
     height: 640,
-    title: 'PokéSky',
+    title: 'Cobbloria',
     frame: false,
     resizable: false,
     backgroundColor: '#080912',
