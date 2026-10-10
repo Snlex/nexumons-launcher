@@ -394,7 +394,7 @@ async function launchGame(win, { auth, ram }) {
     if(!SERVER_IP)throw new Error('Adresse du serveur manquante');
     const javaPath = await ensureJava(win);
     await syncModpack(win,GAME_DIR,channel.modpackUrl,channel.modpackVersion,channel.modpackSha256);
-    const fabricVersion = await ensureFabric(win, GAME_DIR, MC_VERSION, FABRIC_LOADER);
+    const fabricVersion = await ensureFabric(win, GAME_DIR, MC_VERSION, channel.fabricLoader || FABRIC_LOADER);
     ensureServerListed(GAME_DIR); // pré-enregistré dans la liste Multijoueur
 
     const opts = {
