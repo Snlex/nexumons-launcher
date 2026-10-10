@@ -436,10 +436,12 @@ async function launchGame(win, { auth, ram }) {
 // ============ FENÊTRE ============
 let mainWindow = null;
 function createWindow() {
+  if (process.platform === 'darwin' && app.dock) app.dock.setIcon(path.join(__dirname, '..', 'build', 'icon.png'));
   mainWindow = new BrowserWindow({
     width: 1000,
     height: 640,
     title: 'Cobbloria',
+    icon: path.join(__dirname, '..', 'build', 'icon.png'),
     frame: false,
     resizable: false,
     backgroundColor: '#080912',

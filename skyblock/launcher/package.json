@@ -1,6 +1,6 @@
 {
   "name": "nexumons-skyblock-launcher",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Launcher autonome Cobbloria",
   "homepage": "./",
   "main": "bootstrap.js",
@@ -53,17 +53,21 @@
         "dmg"
       ],
       "identity": null,
-      "category": "public.app-category.games"
+      "category": "public.app-category.games",
+      "icon": "build/icon.icns"
     },
     "win": {
       "target": [
         "nsis"
       ],
-      "signAndEditExecutable": false
+      "signAndEditExecutable": true,
+      "icon": "build/icon.ico"
     },
     "nsis": {
       "oneClick": false,
-      "allowToChangeInstallationDirectory": true
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico"
     },
     "artifactName": "Cobbloria-${version}-${os}-${arch}.${ext}"
   }
