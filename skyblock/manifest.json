@@ -16,6 +16,6 @@
   "serverName": "Cobbloria",
   "website": "https://cobbloria.com",
   "windowsUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/cobbloria-launcher-0.2.8/Cobbloria-0.2.8-win-x64.exe",
-  "macArmUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/cobbloria-launcher-0.2.8/Cobbloria-0.2.8-mac-arm64.zip",
-  "macIntelUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/cobbloria-launcher-0.2.8/Cobbloria-0.2.8-mac-x64.zip"
+  "macArmUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/cobbloria-launcher-0.2.8/Cobbloria-0.2.8-mac-arm64-fixed.zip",
+  "macIntelUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/cobbloria-launcher-0.2.8/Cobbloria-0.2.8-mac-x64-fixed.zip"
 }
