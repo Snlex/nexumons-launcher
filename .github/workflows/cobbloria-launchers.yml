@@ -1,0 +1,89 @@
+name: Cobbloria native launchers
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  native:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: windows-latest
+            target: '--win --x64'
+          - runner: macos-15
+            target: '--mac --arm64'
+          - runner: macos-15-intel
+            target: '--mac --x64'
+    runs-on: ${{ matrix.runner }}
+    defaults:
+      run:
+        working-directory: skyblock/launcher
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: skyblock/launcher/package-lock.json
+      - run: npm ci
+      - run: npm test
+      - run: cp build/sky-island.png src/sky-island.png
+      - run: npx esbuild src/index.js --bundle --minify --outfile=build/interface.js --loader:.png=file --loader:.js=jsx --asset-names='[name]-[hash]'
+      - run: npx electron-builder ${{ matrix.target }} --publish never
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+      - name: Windows executable and packaged UI smoke test
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $env:COBBLORIA_SMOKE_FILE = Join-Path $env:RUNNER_TEMP 'cobbloria-smoke.json'
+          $exe = Get-ChildItem dist/*portable.exe | Select-Object -First 1
+          if (!$exe) { throw 'Portable executable missing' }
+          $bytes = [System.IO.File]::ReadAllBytes($exe.FullName)
+          if ($bytes[0] -ne 77 -or $bytes[1] -ne 90) { throw 'Invalid Windows executable' }
+          $process = Start-Process $exe.FullName -ArgumentList '--smoke-test' -PassThru
+          $deadline = (Get-Date).AddSeconds(90)
+          while (!(Test-Path $env:COBBLORIA_SMOKE_FILE) -and (Get-Date) -lt $deadline) { Start-Sleep -Seconds 2 }
+          if (!(Test-Path $env:COBBLORIA_SMOKE_FILE)) { Stop-Process -Id $process.Id -ErrorAction SilentlyContinue; throw 'Launcher did not load its interface' }
+          Get-Content $env:COBBLORIA_SMOKE_FILE
+      - name: Verify and sign Mac bundle
+        if: runner.os == 'macOS'
+        run: |
+          bundle=$(find dist -maxdepth 3 -name Cobbloria.app -type d | head -1)
+          codesign --force --deep --sign - "$bundle"
+          codesign --verify --deep --strict "$bundle"
+          arch=$(node -p process.arch)
+          ditto -c -k --sequesterRsrc --keepParent "$bundle" "dist/Cobbloria-0.2.9-mac-${arch}-fixed.zip"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cobbloria-${{ matrix.runner }}
+          path: |
+            skyblock/launcher/dist/*.exe
+            skyblock/launcher/dist/*fixed.zip
+            skyblock/launcher/dist/*.dmg
+  release:
+    needs: native
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: native
+          merge-multiple: true
+      - name: Package application update
+        run: |
+          python3 - <<'PY'
+          import pathlib,zipfile,hashlib,json
+          root=pathlib.Path('skyblock/launcher')
+          files={str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest() for d in ['electron','build'] for p in (root/d).rglob('*') if p.is_file()}
+          with zipfile.ZipFile('native/Cobbloria-app-0.2.9.zip','w',zipfile.ZIP_DEFLATED) as z:
+            for p in files:z.write(root/p,p)
+            z.writestr('files.json',json.dumps({'files':files}))
+          PY
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create cobbloria-launcher-0.2.9 native/* --repo "$GITHUB_REPOSITORY" --title 'Cobbloria 0.2.9' --notes 'Installateurs reconstruits sur Windows et macOS, version portable Windows, identité Cobbloria et pack joueur à jour. Démarrage Windows contrôlé automatiquement, sans lancer Minecraft.'

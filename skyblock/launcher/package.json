@@ -1,6 +1,6 @@
 {
-  "name": "nexumons-skyblock-launcher",
-  "version": "0.2.8",
+  "name": "cobbloria-launcher",
+  "version": "0.2.9",
   "description": "Launcher autonome Cobbloria",
   "homepage": "./",
   "main": "bootstrap.js",
@@ -58,7 +58,8 @@
     },
     "win": {
       "target": [
-        "nsis"
+        "nsis",
+        "portable"
       ],
       "signAndEditExecutable": true,
       "icon": "build/icon.ico"
@@ -67,8 +68,17 @@
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
       "installerIcon": "build/icon.ico",
-      "uninstallerIcon": "build/icon.ico"
+      "uninstallerIcon": "build/icon.ico",
+      "perMachine": false,
+      "allowElevation": false,
+      "createDesktopShortcut": true,
+      "shortcutName": "Cobbloria",
+      "runAfterFinish": false,
+      "artifactName": "Cobbloria-${version}-win-${arch}-setup.${ext}"
     },
-    "artifactName": "Cobbloria-${version}-${os}-${arch}.${ext}"
+    "artifactName": "Cobbloria-${version}-${os}-${arch}.${ext}",
+    "portable": {
+      "artifactName": "Cobbloria-${version}-win-${arch}-portable.${ext}"
+    }
   }
 }

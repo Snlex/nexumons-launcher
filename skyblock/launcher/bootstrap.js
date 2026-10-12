@@ -1,9 +1,13 @@
 const {app,BrowserWindow}=require('electron');const path=require('path');const fs=require('fs');const axios=require('axios');const Module=require('module');
 const {syncArchive}=require('./electron/updates');
+const bundledVersion=require('./package.json').version;
+const older=(a,b)=>{const x=String(a||'0').split('.').map(Number),y=String(b).split('.').map(Number);for(let n=0;n<3;n++){if((x[n]||0)!==(y[n]||0))return (x[n]||0)<(y[n]||0);}return false;};
 const MANIFEST='https://raw.githubusercontent.com/Snlex/nexumons-launcher/main/skyblock/manifest.json';
 app.setName('Cobbloria');
+if(process.platform==='win32')app.setAppUserModelId('com.nexumons.skyblock.launcher');
 const locked=app.requestSingleInstanceLock();if(!locked){app.quit();}else{
  app.whenReady().then(async()=>{
+  if(process.argv.includes('--smoke-test')){require('./electron/main');return;}
   if(process.env.NEXUMONS_PREVIEW==='1'&&!app.isPackaged){require('./electron/main');return;}
   const root=path.join(app.getPath('appData'),'nexumons-skyblock-launcher','application');
   if(process.platform==='darwin'&&app.dock)app.dock.setIcon(path.join(__dirname,'build','icon.png'));
@@ -12,6 +16,7 @@ const locked=app.requestSingleInstanceLock();if(!locked){app.quit();}else{
   try{
    const channel=(await axios.get(MANIFEST+'?t='+Date.now(),{timeout:15000})).data;
    if(channel.channel!=='skyblock'||channel.engineVersion!=='0.1.0')throw new Error('Nouvelle version du moteur : télécharge le launcher depuis la release Skyblock.');
+   if(older(channel.appVersion,bundledVersion))throw Error('Application distante plus ancienne que le launcher installé');
    await syncArchive({root,url:channel.appUrl,version:channel.appVersion,sha256:channel.appSha256,dirs:['electron','build'],download:async(url,file)=>{
     const response=await axios.get(url,{responseType:'stream',timeout:120000});await require('stream/promises').pipeline(response.data,fs.createWriteStream(file));
    }});
@@ -19,8 +24,9 @@ const locked=app.requestSingleInstanceLock();if(!locked){app.quit();}else{
    await status.loadURL('data:text/html;charset=utf-8,'+encodeURIComponent('<body style="background:#101323;color:#e8eaff;font:16px sans-serif;padding:28px">GitHub indisponible ou mise à jour non installée.<br>Chargement de la dernière version locale.</body>'));
   }
   let entry=path.join(root,'electron','main.js');
-  if(!fs.existsSync(entry))entry=path.join(__dirname,'electron','main.js');
+  let cached;try{cached=JSON.parse(fs.readFileSync(path.join(root,'.managed-release.json'),'utf8'));}catch{}
+  if(older(cached?.version,bundledVersion)||!fs.existsSync(entry))entry=path.join(__dirname,'electron','main.js');
   process.env.NODE_PATH=path.join(__dirname,'node_modules');Module._initPaths();
   try{require(entry);setImmediate(()=>status.close());}catch(e){require('electron').dialog.showErrorBox('Cobbloria','Impossible de charger le launcher : '+e.message);app.quit();}
- });
+ }).catch(e=>{require('electron').dialog.showErrorBox('Cobbloria — démarrage impossible',String(e.message||e));app.quit();});
 }

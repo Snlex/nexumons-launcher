@@ -16,8 +16,8 @@ const SERVER_LIST_NAME = '§d§lCOBBLORIA §r§7· Cobblemon Skyblock';
 const MC_VERSION = '1.21.1';
 const FABRIC_LOADER = '0.19.5';
 // Source du modpack (zip Dropbox en dl=1). À mettre à jour à chaque nouvelle version du pack.
-const MODPACK_URL = 'https://github.com/Snlex/nexumons-launcher/releases/download/cobbloria-1.0.17/Cobbloria-client-players-1.0.17.zip';
-const MODPACK_VERSION = 'players-1.0.17';
+const MODPACK_URL = 'https://github.com/Snlex/nexumons-launcher/releases/download/cobbloria-1.0.21/Cobbloria-client-players-1.0.21.zip';
+const MODPACK_VERSION = 'players-1.0.21';
 // ⬇️ REMPLACE TON_PSEUDO par ton pseudo GitHub. Le launcher lit ce fichier à chaque lancement
 // pour connaître la version + le lien du modpack → MAJ sans rebuilder le launcher.
 const MANIFEST_URL = 'https://raw.githubusercontent.com/Snlex/nexumons-launcher/main/skyblock/manifest.json';
@@ -447,11 +447,13 @@ function createWindow() {
     backgroundColor: '#080912',
     webPreferences: { preload: path.join(__dirname, 'preload.js'), contextIsolation: true, nodeIntegration: false },
   });
+  if(process.argv.includes('--smoke-test')){mainWindow.webContents.once('did-finish-load',()=>{setTimeout(async()=>{try{const ok=await mainWindow.webContents.executeJavaScript("document.body.innerText.includes('COBBLORIA') && !!window.nexumons");if(!ok)throw Error('Interface ou preload absent');fs.writeFileSync(process.env.COBBLORIA_SMOKE_FILE,JSON.stringify({ok:true,version:app.getVersion(),platform:process.platform}));app.exit(0);}catch(e){console.error(e);app.exit(1);}},1500);});}
   if (app.isPackaged) {
     mainWindow.loadFile(path.join(__dirname, '..', 'build', 'index.html'));
   } else {
     mainWindow.loadFile(path.join(__dirname, '..', 'build', 'index.html'));
   }
+  mainWindow.webContents.on('did-fail-load',(_event,code,description)=>{require('electron').dialog.showErrorBox('Cobbloria — interface indisponible',description+' ('+code+')');});
   mainWindow.on('closed', () => { mainWindow = null; });
 }
 
