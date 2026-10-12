@@ -1,9 +1,9 @@
 {
   "channel": "skyblock",
   "engineVersion": "0.1.0",
-  "appVersion": "0.2.8",
-  "appUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/cobbloria-launcher-0.2.8/Cobbloria-app-0.2.8.zip",
-  "appSha256": "620f6ef47a2f4db092b9d4214ba36c20609747384490d9ba38f300f7b9436413",
+  "appVersion": "0.2.9",
+  "appUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/cobbloria-launcher-0.2.9/Cobbloria-app-0.2.9.zip",
+  "appSha256": "1c8c675dd9c03c9bc97c2c4e7427a3fa015f36c2d06d6ab32ac80bb2414bb4a8",
   "modpackVersion": "players-1.0.21",
   "modpackUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/cobbloria-1.0.21/Cobbloria-client-players-1.0.21.zip",
   "modpackSha256": "6b579fc5ebddc3d713125a88b8d1a395baaeacad6f8b91eb4f1cae6235ef308d",
@@ -15,7 +15,8 @@
   "testOnly": false,
   "serverName": "Cobbloria",
   "website": "https://cobbloria.com",
-  "windowsUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/cobbloria-launcher-0.2.8/Cobbloria-0.2.8-win-x64.exe",
-  "macArmUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/cobbloria-launcher-0.2.8/Cobbloria-0.2.8-mac-arm64-fixed.zip",
-  "macIntelUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/cobbloria-launcher-0.2.8/Cobbloria-0.2.8-mac-x64-fixed.zip"
+  "windowsUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/cobbloria-launcher-0.2.9/Cobbloria-0.2.9-win-x64-setup.exe",
+  "macArmUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/cobbloria-launcher-0.2.9/Cobbloria-0.2.9-mac-arm64-fixed.zip",
+  "macIntelUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/cobbloria-launcher-0.2.9/Cobbloria-0.2.9-mac-x64-fixed.zip",
+  "windowsPortableUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/cobbloria-launcher-0.2.9/Cobbloria-0.2.9-win-x64-portable.exe"
 }
