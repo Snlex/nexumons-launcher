@@ -1,5 +1,3 @@
-# Nexumons Academy — Launcher 1.0.6
+# Nexumons Academy — Launcher 1.0.8
 
-Kinetic 1 uniquement. Minecraft 1.21.1 / Fabric 0.18.1 / Java 21 / Cobblemon 1.8.1.
-
-231 fichiers vérifiés : marchés, contrats variés, Pokédex, classements et warps administrateur. Ligue par équipes et défi hebdomadaire. Compte Microsoft requis. Mise à jour via GitHub.
+Kinetic 1. Minecraft 1.21.1, Cobblemon 1.8.1, Java 21. Profil, calendrier, livraisons, tutoriel, Ligue, raids, HDV et GTS. Mise à jour automatique dédiée via GitHub.
