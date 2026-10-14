@@ -1,18 +1,18 @@
 {
   "channel": "nexumons-academy",
   "engineVersion": "1.0.0",
-  "appVersion": "1.0.7",
-  "appUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-launcher-1.0.7/Nexumons-Academy-app-1.0.7.zip",
-  "appSha256": "0019c90e6cbc0b2ded6bfe13633eda2a66887719aef945fe76102eaec1e285cf",
+  "appVersion": "1.0.8",
+  "appUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-launcher-1.0.8/Nexumons-Academy-app-1.0.8.zip",
+  "appSha256": "364b2d96e8a81cb1ad10c8bf6625426af54ebf2c21dd93a828276b9c5a1a1102",
   "minecraft": "1.21.1",
   "fabric": "0.18.1",
   "java": 21,
   "serverAddress": "172.255.205.132:25565",
-  "packVersion": "2.7.0-nexumons-java21-r8",
+  "packVersion": "2.7.0-nexumons-java21-r9",
   "downloads": {
-    "windows": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-launcher-1.0.7/Nexumons-Academy-1.0.7-win-x64-setup.exe",
-    "windowsPortable": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-launcher-1.0.7/Nexumons-Academy-1.0.7-win-x64-portable.exe",
-    "macArm64": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-launcher-1.0.7/Nexumons-Academy-1.0.7-mac-arm64-fixed.zip",
-    "macIntel": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-launcher-1.0.7/Nexumons-Academy-1.0.7-mac-x64-fixed.zip"
+    "windows": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-launcher-1.0.8/Nexumons-Academy-1.0.8-win-x64-setup.exe",
+    "windowsPortable": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-launcher-1.0.8/Nexumons-Academy-1.0.8-win-x64-portable.exe",
+    "macArm64": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-launcher-1.0.8/Nexumons-Academy-1.0.8-mac-arm64-fixed.zip",
+    "macIntel": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-launcher-1.0.8/Nexumons-Academy-1.0.8-mac-x64-fixed.zip"
   }
 }
