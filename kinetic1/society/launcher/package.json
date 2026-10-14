@@ -1,0 +1,71 @@
+{
+  "name": "nexumons-society-launcher",
+  "version": "1.0.0",
+  "description": "Launcher Nexumons — Society et Create",
+  "main": "bootstrap.js",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "dist": "electron-builder"
+  },
+  "dependencies": {
+    "axios": "1.20.0",
+    "minecraft-launcher-core": "3.18.2",
+    "msmc": "5.0.5",
+    "yauzl": "3.4.0"
+  },
+  "devDependencies": {
+    "electron": "35.7.5",
+    "electron-builder": "26.0.12"
+  },
+  "build": {
+    "appId": "gg.nexumons.society.launcher",
+    "productName": "Nexumons Society",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "bootstrap.js",
+      "electron/**",
+      "build/**",
+      "package.json"
+    ],
+    "mac": {
+      "target": [
+        "zip"
+      ],
+      "identity": null,
+      "category": "public.app-category.games",
+      "icon": "build/icon.png"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "signAndEditExecutable": true,
+      "icon": "build/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": false,
+      "allowElevation": false,
+      "createDesktopShortcut": true,
+      "shortcutName": "Nexumons Society",
+      "runAfterFinish": false,
+      "artifactName": "Nexumons-Society-${version}-win-${arch}-setup.${ext}"
+    },
+    "portable": {
+      "artifactName": "Nexumons-Society-${version}-win-${arch}-portable.${ext}"
+    },
+    "artifactName": "Nexumons-Society-${version}-${os}-${arch}.${ext}"
+  },
+  "overrides": {
+    "axios": "1.20.0",
+    "adm-zip": "0.6.1",
+    "request": "npm:@cypress/request@4.0.1",
+    "uuid": "11.1.1"
+  }
+}
