@@ -1,0 +1,18 @@
+{
+  "channel": "nexumons-society",
+  "engineVersion": "1.0.0",
+  "appVersion": "1.0.0",
+  "appUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-society-launcher-1.0.0/Nexumons-Society-app-1.0.0.zip",
+  "appSha256": "ed1beaf75cccbfcbfbd340f7409ecad491bd92531cc84c8794c73b29e8006798",
+  "minecraft": "1.20.1",
+  "forge": "47.4.0",
+  "java": 17,
+  "serverAddress": "172.255.205.132:25565",
+  "packVersion": "1.1.4-SSV4.1.5A",
+  "downloads": {
+    "windows": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-society-launcher-1.0.0/Nexumons-Society-1.0.0-win-x64-setup.exe",
+    "windowsPortable": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-society-launcher-1.0.0/Nexumons-Society-1.0.0-win-x64-portable.exe",
+    "macArm64": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-society-launcher-1.0.0/Nexumons-Society-1.0.0-mac-arm64-fixed.zip",
+    "macIntel": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-society-launcher-1.0.0/Nexumons-Society-1.0.0-mac-x64-fixed.zip"
+  }
+}
