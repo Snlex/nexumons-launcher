@@ -1,6 +1,6 @@
 {
   "minecraft": "1.21.1",
-  "packVersion": "2.7.0-nexumons-java21-r6",
+  "packVersion": "2.7.0-nexumons-java21-r7",
   "files": [
     {
       "projectId": 32274,
@@ -2942,15 +2942,15 @@
     },
     {
       "projectId": "51shyZVL",
-      "fileId": "wUYbHzXF",
-      "name": "moreculling-fabric-1.21.1-1.0.10.jar",
-      "size": 332266,
-      "url": "https://cdn.modrinth.com/data/51shyZVL/versions/wUYbHzXF/moreculling-fabric-1.21.1-1.0.10.jar",
+      "fileId": "1V6UtDhN",
+      "name": "moreculling-fabric-1.21.1-1.0.6.jar",
+      "size": 345544,
+      "url": "https://cdn.modrinth.com/data/51shyZVL/versions/1V6UtDhN/moreculling-fabric-1.21.1-1.0.6.jar",
       "folder": "mods",
-      "sha256": "5f67531f1dc2259ac5f4dc49997d0e3623e8b3b8330f52eac4a6cc99949f9a9b",
+      "sha256": "b7cf4b2d005682b2e1999c0a6fae868b1ddf941aa08efb0ef79baa71acf8bb3a",
       "environment": "client",
       "modId": "moreculling",
-      "modVersion": "1.0.10"
+      "modVersion": "1.0.6"
     },
     {
       "projectId": "5ZwdcRci",
