@@ -1,6 +1,6 @@
 {
   "minecraft": "1.21.1",
-  "packVersion": "2.7.0-nexumons-java21-r9",
+  "packVersion": "2.7.0-nexumons-java21-r10",
   "files": [
     {
       "projectId": 32274,
@@ -744,19 +744,6 @@
       "modVersion": "6.0.2.5"
     },
     {
-      "projectId": 440979,
-      "fileId": 6613429,
-      "name": "wthit-fabric-12.5.4.jar",
-      "size": 824592,
-      "url": "https://mediafilez.forgecdn.net/files/6613/429/wthit-fabric-12.5.4.jar",
-      "fallbackUrl": "https://www.curseforge.com/api/v1/mods/440979/files/6613429/download",
-      "folder": "mods",
-      "sha256": "44222dd9c2b7d21d5db848d56077c649a7e94cd70645b775bc5bf47c8f2a8fd3",
-      "environment": "*",
-      "modId": "wthit",
-      "modVersion": "12.5.4"
-    },
-    {
       "projectId": 447673,
       "fileId": 5913375,
       "name": "sodium-extra-fabric-0.6.0+mc1.21.1.jar",
@@ -1158,19 +1145,6 @@
       "environment": "*",
       "modId": "playerladder",
       "modVersion": "0.7.1"
-    },
-    {
-      "projectId": 580555,
-      "fileId": 6420930,
-      "name": "emi-1.1.22+1.21.1+fabric.jar",
-      "size": 1025303,
-      "url": "https://mediafilez.forgecdn.net/files/6420/930/emi-1.1.22%2B1.21.1%2Bfabric.jar",
-      "fallbackUrl": "https://www.curseforge.com/api/v1/mods/580555/files/6420930/download",
-      "folder": "mods",
-      "sha256": "6da00a8d13cad6e55abaa3032d80ff4d1d1520146b683f1ca7c029e01718fe05",
-      "environment": "*",
-      "modId": "emi",
-      "modVersion": "1.1.22+1.21.1+fabric"
     },
     {
       "projectId": 580714,
@@ -2993,6 +2967,26 @@
       "environment": "*",
       "modId": "nexumons_adventure",
       "modVersion": "1.3.0"
+    },
+    {
+      "name": "Jade-1.21.1-Fabric-15.10.6.jar",
+      "size": 740746,
+      "sha256": "fb834cc77804a6f509690c54b4af56305ce7a7f3171f8616310710f0af1f673a",
+      "url": "https://cdn.modrinth.com/data/nvQzSEkH/versions/adpNvTZS/Jade-1.21.1-Fabric-15.10.6.jar",
+      "folder": "mods",
+      "environment": "*",
+      "modId": "jade",
+      "modVersion": "15.10.6+fabric"
+    },
+    {
+      "name": "emi-1.1.24+1.21.1+fabric.jar",
+      "size": 1098223,
+      "sha256": "56ecd418e988cba23dd653d498309fd7b886265708253d5ca7a8fb621dcc5db4",
+      "url": "https://cdn.modrinth.com/data/fRiHVvU7/versions/on5GT1qh/emi-1.1.24%2B1.21.1%2Bfabric.jar",
+      "folder": "mods",
+      "environment": "*",
+      "modId": "emi",
+      "modVersion": "1.1.24+1.21.1+fabric"
     }
   ],
   "fabric": "0.18.1",
