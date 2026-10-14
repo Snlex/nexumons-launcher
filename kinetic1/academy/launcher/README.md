@@ -1,4 +1,4 @@
-# Nexumons Academy — Launcher 1.0.3
+# Nexumons Academy — Launcher 1.0.4
 
 Minecraft 1.21.1 / Fabric 0.18.1 / Java 21 / Cobblemon 1.8.1, basé sur Academy 2.7.0.
 
