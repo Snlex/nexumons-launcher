@@ -1,6 +1,6 @@
 {
   "minecraft": "1.21.1",
-  "packVersion": "2.7.0-nexumons-java21-r7",
+  "packVersion": "2.7.0-nexumons-java21-r8",
   "files": [
     {
       "projectId": 32274,
@@ -2965,16 +2965,6 @@
       "modVersion": "1.6.15+1.21.1"
     },
     {
-      "name": "nexumons-adventure-1.1.0.jar",
-      "size": 200012,
-      "sha256": "498e7b175fb5873cf9d546b3f595d4485a3a27ea95f84bb6aa8a55ce6b17beb1",
-      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-adventure-1.1.0/nexumons-adventure-1.1.0.jar",
-      "folder": "mods",
-      "environment": "*",
-      "modId": "nexumons_adventure",
-      "modVersion": "1.1.0"
-    },
-    {
       "name": "cobbleauction-1.0.0.jar",
       "size": 49753,
       "sha256": "4a6b93409ab2aba9d3b9f5e4cf0b6d17bdd38ddac54d680f5da5d9a1f4d7aeee",
@@ -2983,6 +2973,26 @@
       "environment": "*",
       "modId": "cobbleauction",
       "modVersion": "1.0.0"
+    },
+    {
+      "name": "nexumons-adventure-1.2.0.jar",
+      "size": 234325,
+      "sha256": "eb373295df77349926246398a4f8ab23fae46e71ced6f2f4e0fa6663ac3fb0ef",
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-adventure-1.2.0/nexumons-adventure-1.2.0.jar",
+      "folder": "mods",
+      "environment": "*",
+      "modId": "nexumons_adventure",
+      "modVersion": "1.2.0"
+    },
+    {
+      "name": "cobblemonraiddens-fabric-0.13.2+1.21.1.jar",
+      "size": 2783827,
+      "sha256": "079961f4305e6885be566ff81a5c49f102681a7f7ac37f912b0a5a4872321ce3",
+      "url": "https://cdn.modrinth.com/data/GebWh45l/versions/aFuImAaR/cobblemonraiddens-fabric-0.13.2%2B1.21.1.jar",
+      "folder": "mods",
+      "environment": "*",
+      "modId": "cobblemonraiddens",
+      "modVersion": "0.13.2+1.21.1"
     }
   ],
   "fabric": "0.18.1",
