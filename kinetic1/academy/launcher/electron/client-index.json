@@ -1,6 +1,6 @@
 {
   "minecraft": "1.21.1",
-  "packVersion": "2.7.0-nexumons-java21-r2",
+  "packVersion": "2.7.0-nexumons-java21-r3",
   "files": [
     {
       "projectId": 32274,
@@ -770,19 +770,6 @@
       "modVersion": "0.6.0+mc1.21.1"
     },
     {
-      "projectId": 448233,
-      "fileId": 6780236,
-      "name": "entityculling-fabric-1.8.2-mc1.21.jar",
-      "size": 469193,
-      "url": "https://mediafilez.forgecdn.net/files/6780/236/entityculling-fabric-1.8.2-mc1.21.jar",
-      "fallbackUrl": "https://www.curseforge.com/api/v1/mods/448233/files/6780236/download",
-      "folder": "mods",
-      "sha256": "8649c93be0ce20655742adb24bac097a9aeec50b8c1bc8ed78bfe1da7636e8fa",
-      "environment": "*",
-      "modId": "entityculling",
-      "modVersion": "1.8.2"
-    },
-    {
       "projectId": 454372,
       "fileId": 6076743,
       "name": "supermartijn642corelib-1.1.18a-fabric-mc1.21.jar",
@@ -1470,19 +1457,6 @@
       "environment": "*",
       "modId": "leavesbegone",
       "modVersion": "21.1.0"
-    },
-    {
-      "projectId": 686911,
-      "fileId": 6745746,
-      "name": "ImmediatelyFast-Fabric-1.6.6+1.21.1.jar",
-      "size": 228315,
-      "url": "https://mediafilez.forgecdn.net/files/6745/746/ImmediatelyFast-Fabric-1.6.6%2B1.21.1.jar",
-      "fallbackUrl": "https://www.curseforge.com/api/v1/mods/686911/files/6745746/download",
-      "folder": "mods",
-      "sha256": "0d72eb4e380ff683ebb92058357a73ef2d94f1244c3f26940d4729c94dd31ed5",
-      "environment": "client",
-      "modId": "immediatelyfast",
-      "modVersion": "1.6.6+1.21.1"
     },
     {
       "projectId": 687131,
@@ -2917,6 +2891,78 @@
       "environment": "*",
       "modId": "cobbledollars",
       "modVersion": "2.0.0+Beta-6.1+1.21.1"
+    },
+    {
+      "projectId": "gF3BGWvG",
+      "fileId": "YnCCrnDV",
+      "name": "open-parties-and-claims-fabric-1.21.1-0.32.7.jar",
+      "size": 1956026,
+      "url": "https://cdn.modrinth.com/data/gF3BGWvG/versions/YnCCrnDV/open-parties-and-claims-fabric-1.21.1-0.32.7.jar",
+      "folder": "mods",
+      "sha256": "736a905f391407cfdb4f87ee88d5e80d818fafbe22fb28512ec4bf57b6894605",
+      "environment": "*",
+      "modId": "openpartiesandclaims",
+      "modVersion": "0.32.7"
+    },
+    {
+      "projectId": "6VdDUivB",
+      "fileId": "kev3hDqV",
+      "name": "essential_commands-0.35.2-mc1.21.jar",
+      "size": 1442941,
+      "url": "https://cdn.modrinth.com/data/6VdDUivB/versions/kev3hDqV/essential_commands-0.35.2-mc1.21.jar",
+      "folder": "mods",
+      "sha256": "3b29328335d3e94bff279979d7a2afbb48af01e5738363ec014c02393f29ec18",
+      "environment": "*",
+      "modId": "essential_commands",
+      "modVersion": "0.35.2-mc1.21"
+    },
+    {
+      "projectId": "gvQqBUqZ",
+      "fileId": "N08Z8wog",
+      "name": "lithium-fabric-0.15.4+mc1.21.1.jar",
+      "size": 797454,
+      "url": "https://cdn.modrinth.com/data/gvQqBUqZ/versions/N08Z8wog/lithium-fabric-0.15.4%2Bmc1.21.1.jar",
+      "folder": "mods",
+      "sha256": "92329d98c57f5a22091a0adb509fdb1d60113a5602c708b799b13134bad13baa",
+      "environment": "*",
+      "modId": "lithium",
+      "modVersion": "0.15.4+mc1.21.1"
+    },
+    {
+      "projectId": "NNAgCjsB",
+      "fileId": "yllJFBpU",
+      "name": "entityculling-fabric-1.11.3-mc1.21.1.jar",
+      "size": 1519243,
+      "url": "https://cdn.modrinth.com/data/NNAgCjsB/versions/yllJFBpU/entityculling-fabric-1.11.3-mc1.21.1.jar",
+      "folder": "mods",
+      "sha256": "9b06f16803071299d1aa2ade4d5539749fdfaddba28b6b9350dac9876eead1a5",
+      "environment": "client",
+      "modId": "entityculling",
+      "modVersion": "1.11.3"
+    },
+    {
+      "projectId": "51shyZVL",
+      "fileId": "wUYbHzXF",
+      "name": "moreculling-fabric-1.21.1-1.0.10.jar",
+      "size": 332266,
+      "url": "https://cdn.modrinth.com/data/51shyZVL/versions/wUYbHzXF/moreculling-fabric-1.21.1-1.0.10.jar",
+      "folder": "mods",
+      "sha256": "5f67531f1dc2259ac5f4dc49997d0e3623e8b3b8330f52eac4a6cc99949f9a9b",
+      "environment": "client",
+      "modId": "moreculling",
+      "modVersion": "1.0.10"
+    },
+    {
+      "projectId": "5ZwdcRci",
+      "fileId": "aLnBqxFW",
+      "name": "ImmediatelyFast-Fabric-1.6.15+1.21.1.jar",
+      "size": 342235,
+      "url": "https://cdn.modrinth.com/data/5ZwdcRci/versions/aLnBqxFW/ImmediatelyFast-Fabric-1.6.15%2B1.21.1.jar",
+      "folder": "mods",
+      "sha256": "9c391f0864caf9083cac98e44b1ab6235e45fbf340efda5ba75e0a21929d05d5",
+      "environment": "client",
+      "modId": "immediatelyfast",
+      "modVersion": "1.6.15+1.21.1"
     }
   ],
   "fabric": "0.18.1",
