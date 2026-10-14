@@ -1,0 +1,21 @@
+const fs=require('fs'),path=require('path'),crypto=require('crypto'),extract=require('./safe-extract');const {hash,checkedRelative}=require('./updates');
+const managed=['mods','resourcepacks','shaderpacks','datapacks','config','emotes','polymer','journeymap'];
+function validateIndex(index){if(index.minecraft!=='1.21.1'||index.fabric!=='0.18.1'||index.files.length!==222)throw Error('Le pack Academy est incomplet ou incompatible');for(const f of index.files){if(path.basename(f.name)!==f.name||!['mods','resourcepacks','shaderpacks'].includes(f.folder)||!/^https:\/\//.test(f.url)||!/^[a-f0-9]{64}$/.test(f.sha256)||!Number.isSafeInteger(f.size)||f.size<=0)throw Error('Fichier de pack invalide : '+f.name);}return index;}
+function commitPack(root,stage){const backup=path.join(root,'.previous-pack');fs.rmSync(backup,{recursive:true,force:true});fs.mkdirSync(backup,{recursive:true});const changes=[];try{for(const dir of managed){const incoming=path.join(stage,dir);if(!fs.existsSync(incoming))continue;const target=path.join(root,dir),saved=path.join(backup,dir),had=fs.existsSync(target);if(had)fs.renameSync(target,saved);changes.push({target,saved,had});fs.renameSync(incoming,target);}const marker=path.join(root,'.academy-version');fs.writeFileSync(marker+'.new',fs.readFileSync(path.join(stage,'.academy-version')));fs.renameSync(marker+'.new',marker);}catch(e){for(const c of changes.reverse()){fs.rmSync(c.target,{recursive:true,force:true});if(c.had)fs.renameSync(c.saved,c.target);}throw e;}}
+async function installPack({root,index,profile,download,status}){
+ validateIndex(index);fs.mkdirSync(root,{recursive:true});const key=index.packVersion;let complete=fs.existsSync(path.join(root,'.academy-version'))&&fs.readFileSync(path.join(root,'.academy-version'),'utf8')===key;
+ if(complete){for(const f of index.files){const target=path.join(root,f.folder,f.name);if(!fs.existsSync(target)||fs.statSync(target).size!==f.size||await hash(target)!==f.sha256){complete=false;break;}}}
+ if(complete){status({stage:'modpack',percent:100,text:'Pack Academy vérifié'});return;}
+ const cache=path.join(root,'.downloads');const archive=path.join(cache,'academy-official.zip');status({stage:'modpack',percent:0,text:'Téléchargement du pack officiel Academy…'});
+ await download(profile.packUrl,archive,{sha256:profile.packSha256,onProgress:(a,b)=>status({stage:'modpack',percent:b?Math.round(a/b*100):0,text:'Configuration du pack Academy…'})});
+ const source=path.join(cache,'official');fs.rmSync(source,{recursive:true,force:true});await extract(archive,{dir:source});
+ const manifest=JSON.parse(fs.readFileSync(path.join(source,'manifest.json'),'utf8'));if(manifest.minecraft.version!==profile.minecraft||manifest.minecraft.modLoaders[0].id!=='fabric-'+profile.fabric)throw Error('Archive Academy incompatible');
+ const stage=path.join(root,'.pack-stage-'+crypto.randomUUID());fs.mkdirSync(stage);let finished=0,cursor=0;
+ try{
+  for(const dir of managed){const incoming=path.join(source,'overrides',dir);if(fs.existsSync(incoming))fs.cpSync(incoming,path.join(stage,dir),{recursive:true});}
+  const worker=async()=>{while(cursor<index.files.length){const f=index.files[cursor++];checkedRelative(f.name);const file=path.join(cache,'files',String(f.projectId)+'-'+String(f.fileId)+'-'+f.name);try{await download(f.url,file,{sha256:f.sha256,size:f.size});}catch(e){if(!f.fallbackUrl||/CERT_|certificate|self.signed/i.test(String(e.message)))throw e;await download(f.fallbackUrl,file,{sha256:f.sha256,size:f.size});}fs.mkdirSync(path.join(stage,f.folder),{recursive:true});fs.copyFileSync(file,path.join(stage,f.folder,f.name));finished++;status({stage:'modpack',percent:Math.round(finished/index.files.length*100),text:`Installation des mods : ${finished}/${index.files.length}`});}};
+  const results=await Promise.allSettled(Array.from({length:4},worker));const fail=results.find(r=>r.status==='rejected');if(fail)throw fail.reason;
+  fs.writeFileSync(path.join(stage,'.academy-version'),key);commitPack(root,stage);status({stage:'modpack',percent:100,text:'Academy 2.0 installés'});
+ }finally{fs.rmSync(stage,{recursive:true,force:true});fs.rmSync(source,{recursive:true,force:true});}
+}
+module.exports={managed,validateIndex,commitPack,installPack};

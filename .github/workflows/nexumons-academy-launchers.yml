@@ -1,0 +1,100 @@
+name: Nexumons Academy native launchers
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  native:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: windows-latest
+            target: '--win --x64'
+          - runner: macos-15
+            target: '--mac --arm64'
+          - runner: macos-15-intel
+            target: '--mac --x64'
+    runs-on: ${{ matrix.runner }}
+    defaults:
+      run:
+        working-directory: kinetic1/academy/launcher
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: kinetic1/academy/launcher/package-lock.json
+      - run: npm ci
+      - run: npm test
+      - name: Install and verify official Academy client pack
+        if: runner.os == 'Windows'
+        run: node test/prepare-client.js
+      - run: npx electron-builder ${{ matrix.target }} --publish never
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+      - name: Verify Windows launcher opens
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $env:NEXUMONS_SMOKE_FILE = Join-Path $env:RUNNER_TEMP 'nexumons-smoke.json'
+          $exe = Get-ChildItem dist/*portable.exe | Select-Object -First 1
+          if (!$exe) { throw 'Portable executable missing' }
+          $process = Start-Process $exe.FullName -ArgumentList '--smoke-test' -PassThru
+          $deadline = (Get-Date).AddSeconds(85)
+          while (!(Test-Path $env:NEXUMONS_SMOKE_FILE) -and (Get-Date) -lt $deadline) { Start-Sleep -Seconds 2 }
+          if (!(Test-Path $env:NEXUMONS_SMOKE_FILE)) { Stop-Process -Id $process.Id -ErrorAction SilentlyContinue; throw 'Launcher did not load its interface' }
+          $result = Get-Content $env:NEXUMONS_SMOKE_FILE | ConvertFrom-Json
+          if (!$result.bridge -or !$result.play) { throw 'Interface or preload missing' }
+          Get-Content $env:NEXUMONS_SMOKE_FILE
+      - name: Sign and verify Mac application
+        if: runner.os == 'macOS'
+        run: |
+          bundle=$(find dist -maxdepth 3 -name 'Nexumons Academy.app' -type d | head -1)
+          codesign --force --deep --sign - "$bundle"
+          codesign --verify --deep --strict "$bundle"
+          export NEXUMONS_SMOKE_FILE="$RUNNER_TEMP/nexumons-smoke.json"
+          "$bundle/Contents/MacOS/Nexumons Academy" --smoke-test &
+          python3 - <<'PY'
+          import os,pathlib,time,json
+          p=pathlib.Path(os.environ['NEXUMONS_SMOKE_FILE'])
+          for _ in range(40):
+            if p.exists(): break
+            time.sleep(2)
+          if not p.exists(): raise SystemExit('Launcher did not load its interface')
+          d=json.loads(p.read_text());assert d['bridge'] and d['play'];print(d)
+          PY
+          arch=$(node -p process.arch)
+          ditto -c -k --sequesterRsrc --keepParent "$bundle" "dist/Nexumons-Academy-1.0.0-mac-${arch}-fixed.zip"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nexumons-academy-${{ matrix.runner }}
+          path: |
+            kinetic1/academy/launcher/dist/*.exe
+            kinetic1/academy/launcher/dist/*fixed.zip
+  release:
+    needs: native
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: native
+          merge-multiple: true
+      - name: Package launcher application update
+        run: |
+          python3 - <<'PY'
+          import pathlib,zipfile,hashlib,json
+          root=pathlib.Path('kinetic1/academy/launcher')
+          files={str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest() for d in ['electron','build'] for p in (root/d).rglob('*') if p.is_file()}
+          with zipfile.ZipFile('native/Nexumons-Academy-app-1.0.0.zip','w',zipfile.ZIP_DEFLATED) as z:
+            for p in files:z.write(root/p,p)
+            z.writestr('files.json',json.dumps({'files':files}))
+          PY
+      - name: Publish dedicated Academy release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create nexumons-academy-launcher-1.0.0 native/* --repo "$GITHUB_REPOSITORY" --latest=false --title 'Nexumons Academy 1.0.0' --notes 'Launcher autonome pour Kinetic 1 : Academy 2.7.0, Cobblemon 1.8.1, Minecraft 1.21.1 Fabric et Java 21. Windows installateur et portable, Mac Intel et Apple Silicon. Téléchargement du pack depuis CurseForge, vérification des empreintes, mise à jour applicative dédiée via GitHub. Compte Microsoft requis. Application Mac signée ad hoc, sans notarisation Apple.'
