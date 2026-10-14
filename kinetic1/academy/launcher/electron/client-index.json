@@ -1,6 +1,6 @@
 {
   "minecraft": "1.21.1",
-  "packVersion": "2.7.0",
+  "packVersion": "2.7.0-nexumons-java21-r2",
   "files": [
     {
       "projectId": 32274,
@@ -2881,6 +2881,42 @@
       "folder": "resourcepacks",
       "recoveredFromAuthorModrinth": true,
       "sha256": "82682159ca0132b3fe0f2b24d37324bac1bbd40e2f0c08b592af9073b0df8c92"
+    },
+    {
+      "projectId": "u4fOOHc8",
+      "fileId": "rC2bzg5e",
+      "name": "gamblepokemon-3.2.0.jar",
+      "size": 683159,
+      "url": "https://cdn.modrinth.com/data/u4fOOHc8/versions/rC2bzg5e/gamblepokemon-3.2.0.jar",
+      "folder": "mods",
+      "sha256": "f52dcf4e9da56548134e1750978853b10c7103ff61e798dced49aa95528cf4c3",
+      "environment": "*",
+      "modId": "gamblepokemon",
+      "modVersion": "3.2.0"
+    },
+    {
+      "projectId": "jYjYV1Jb",
+      "fileId": "xT70mKtT",
+      "name": "cobblemon_shiny_rarities-0.3.0.jar",
+      "size": 17601296,
+      "url": "https://cdn.modrinth.com/data/jYjYV1Jb/versions/xT70mKtT/cobblemon_shiny_rarities-0.3.0.jar",
+      "folder": "mods",
+      "sha256": "dff0bddd0ae53e5dd4559d0f73b46d5518f55a56a5cb0eedf7db8bef9df8295a",
+      "environment": "*",
+      "modId": "cobblemon_shiny_rarities",
+      "modVersion": "0.3.0"
+    },
+    {
+      "projectId": "s7N7AsqL",
+      "fileId": "NQdxKsW7",
+      "name": "CobbleDollars-fabric-2.0.0+Beta-6.1+1.21.1.jar",
+      "size": 500815,
+      "url": "https://cdn.modrinth.com/data/s7N7AsqL/versions/NQdxKsW7/CobbleDollars-fabric-2.0.0%2BBeta-6.1%2B1.21.1.jar",
+      "folder": "mods",
+      "sha256": "a007523e2dd8c6f47edc914d33d26ad0a860a0124038e1ec6303a593a919c1b4",
+      "environment": "*",
+      "modId": "cobbledollars",
+      "modVersion": "2.0.0+Beta-6.1+1.21.1"
     }
   ],
   "fabric": "0.18.1",
