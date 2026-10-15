@@ -1,14 +1,14 @@
 {
   "channel": "nexumons-academy",
   "engineVersion": "1.0.0",
-  "appVersion": "1.0.17",
-  "appUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-launcher-1.0.17/Nexumons-Academy-app-1.0.17.zip",
-  "appSha256": "0c6fa8baa8df2d9b59b960761c343f54974cc2d016aa49527028ca1af6bc4fa8",
+  "appVersion": "1.0.18",
+  "appUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-launcher-1.0.18/Nexumons-Academy-app-1.0.18.zip",
+  "appSha256": "4dc5f2cd1b3e8d630ce611650a481494b51542a36a644d80a552ad5930f6083b",
   "minecraft": "1.21.1",
   "fabric": "0.18.1",
   "java": 21,
   "serverAddress": "172.255.205.132:25565",
-  "packVersion": "2.7.0-nexumons-java21-r18",
+  "packVersion": "2.7.0-nexumons-java21-r19",
   "downloads": {
     "windows": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-launcher-1.0.17/Nexumons-Academy-1.0.17-win-x64-setup.exe",
     "windowsPortable": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-launcher-1.0.17/Nexumons-Academy-1.0.17-win-x64-portable.exe",
