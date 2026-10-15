@@ -7,6 +7,8 @@ contextBridge.exposeInMainWorld('nexumons', {
   close: () => ipcRenderer.send('window:close'),
   // authentification
   loginMicrosoft: () => ipcRenderer.invoke('auth:microsoft'),
+  loginOffline: name => ipcRenderer.invoke('auth:offline',name),
+  verifyFiles: () => ipcRenderer.invoke('game:verify'),
   // jeu
   launch: (opts) => ipcRenderer.invoke('game:launch', opts),
   openLogs: () => ipcRenderer.invoke('logs:open'),
