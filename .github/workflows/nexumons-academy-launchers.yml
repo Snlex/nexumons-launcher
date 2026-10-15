@@ -67,7 +67,7 @@ jobs:
           d=json.loads(p.read_text());assert d['bridge'] and d['play'];print(d)
           PY
           arch=$(node -p process.arch)
-          ditto -c -k --sequesterRsrc --keepParent "$bundle" "dist/Nexumons-Academy-1.0.12-mac-${arch}-fixed.zip"
+          ditto -c -k --sequesterRsrc --keepParent "$bundle" "dist/Nexumons-Academy-1.0.13-mac-${arch}-fixed.zip"
       - uses: actions/upload-artifact@v4
         with:
           name: nexumons-academy-${{ matrix.runner }}
@@ -89,7 +89,7 @@ jobs:
           import pathlib,zipfile,hashlib,json
           root=pathlib.Path('kinetic1/academy/launcher')
           files={str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest() for d in ['electron','build'] for p in (root/d).rglob('*') if p.is_file()}
-          with zipfile.ZipFile('native/Nexumons-Academy-app-1.0.12.zip','w',zipfile.ZIP_DEFLATED) as z:
+          with zipfile.ZipFile('native/Nexumons-Academy-app-1.0.13.zip','w',zipfile.ZIP_DEFLATED) as z:
             for p in files:z.write(root/p,p)
             z.writestr('files.json',json.dumps({'files':files}))
           PY
@@ -97,4 +97,4 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create nexumons-academy-launcher-1.0.12 native/* --repo "$GITHUB_REPOSITORY" --latest=false --title 'Nexumons Academy 1.0.12' --notes 'Launcher autonome pour Kinetic 1 : Academy 2.7.0, Cobblemon 1.8.1, Minecraft 1.21.1 Fabric et Java 21. Windows installateur et portable, Mac Intel et Apple Silicon. Téléchargement du pack depuis CurseForge, vérification des empreintes, mise à jour applicative dédiée via GitHub. Compte Microsoft requis. Application Mac signée ad hoc, sans notarisation Apple.'
+          gh release create nexumons-academy-launcher-1.0.13 native/* --repo "$GITHUB_REPOSITORY" --latest=false --title 'Nexumons Academy 1.0.13' --notes 'Launcher autonome pour Kinetic 1 : Academy 2.7.0, Cobblemon 1.8.1, Minecraft 1.21.1 Fabric et Java 21. Windows installateur et portable, Mac Intel et Apple Silicon. Téléchargement du pack depuis CurseForge, vérification des empreintes, mise à jour applicative dédiée via GitHub. Compte Microsoft requis. Application Mac signée ad hoc, sans notarisation Apple.'
