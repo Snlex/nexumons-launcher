@@ -1,6 +1,6 @@
 {
   "minecraft": "1.21.1",
-  "packVersion": "2.7.0-nexumons-java21-r10",
+  "packVersion": "2.7.0-nexumons-java21-r11",
   "files": [
     {
       "projectId": 32274,
@@ -2959,16 +2959,6 @@
       "modVersion": "0.13.2+1.21.1"
     },
     {
-      "name": "nexumons-adventure-1.3.0.jar",
-      "size": 244303,
-      "sha256": "0d0e2554c6d93fe28166de7555be337fdb1fd8ce69657265d7a1974e0f0ee0f4",
-      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-adventure-1.3.0/nexumons-adventure-1.3.0.jar",
-      "folder": "mods",
-      "environment": "*",
-      "modId": "nexumons_adventure",
-      "modVersion": "1.3.0"
-    },
-    {
       "name": "Jade-1.21.1-Fabric-15.10.6.jar",
       "size": 740746,
       "sha256": "fb834cc77804a6f509690c54b4af56305ce7a7f3171f8616310710f0af1f673a",
@@ -2987,6 +2977,16 @@
       "environment": "*",
       "modId": "emi",
       "modVersion": "1.1.24+1.21.1+fabric"
+    },
+    {
+      "name": "nexumons-adventure-1.4.0.jar",
+      "size": 251446,
+      "sha256": "c6c95b6f340c6da104344c0b3f3fd5e5fbbff50b8c0ff19b510cb1ab48afaa65",
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-adventure-1.4.0/nexumons-adventure-1.4.0.jar",
+      "folder": "mods",
+      "environment": "*",
+      "modId": "nexumons_adventure",
+      "modVersion": "1.4.0"
     }
   ],
   "fabric": "0.18.1",
