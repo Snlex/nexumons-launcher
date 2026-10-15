@@ -1,6 +1,6 @@
 {
   "minecraft": "1.21.1",
-  "packVersion": "2.7.0-nexumons-java21-r15",
+  "packVersion": "2.7.0-nexumons-java21-r16",
   "files": [
     {
       "projectId": 32274,
@@ -2979,16 +2979,6 @@
       "modVersion": "1.1.24+1.21.1+fabric"
     },
     {
-      "name": "nexumons-adventure-1.8.0.jar",
-      "size": 350901,
-      "sha256": "58f6259f0ab93123b0965104d56bae0b370132cd5646ffab1d2ca7c579674173",
-      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-adventure-1.8.0/nexumons-adventure-1.8.0.jar",
-      "folder": "mods",
-      "environment": "*",
-      "modId": "nexumons_adventure",
-      "modVersion": "1.8.0"
-    },
-    {
       "name": "daycareplus-1.5.0+1.21.1.jar",
       "size": 671958,
       "sha256": "ffc6fe69792e6321782eece7142ca78e6330690dcb5d68f81cf4c05e5466ed53",
@@ -2997,6 +2987,16 @@
       "environment": "*",
       "modId": "daycareplus",
       "modVersion": "1.5.0+1.21.1"
+    },
+    {
+      "name": "nexumons-adventure-1.9.0.jar",
+      "size": 394133,
+      "sha256": "580adafab0d8ed717ad52351314c112342375bf9618ca1004bf1289c0499a459",
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-adventure-1.9.0/nexumons-adventure-1.9.0.jar",
+      "folder": "mods",
+      "environment": "*",
+      "modId": "nexumons_adventure",
+      "modVersion": "1.9.0"
     }
   ],
   "fabric": "0.18.1",
