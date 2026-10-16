@@ -1,6 +1,6 @@
 {
   "minecraft": "1.21.1",
-  "packVersion": "2.7.0-nexumons-java21-r22",
+  "packVersion": "2.7.0-nexumons-java21-r23",
   "files": [
     {
       "projectId": 32274,
@@ -2989,14 +2989,14 @@
       "modVersion": "1.5.0+1.21.1"
     },
     {
-      "name": "nexumons-adventure-1.12.2.jar",
-      "size": 5004139,
-      "sha256": "3d90b837716cd4ed6463d77392e8824ca5570fa7961094de1b060ca8409a0787",
-      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-adventure-1.12.2/nexumons-adventure-1.12.2.jar",
+      "name": "nexumons-adventure-1.24.0.jar",
+      "size": 5149921,
+      "sha256": "35c1e0a1af52aa7f4aded1523e178fcc7c1133528e853a868c5c0d1d87afbbc5",
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-adventure-1.24.0/nexumons-adventure-1.24.0.jar",
       "folder": "mods",
       "environment": "*",
       "modId": "nexumons_adventure",
-      "modVersion": "1.12.2"
+      "modVersion": "1.24.0"
     }
   ],
   "fabric": "0.18.1",
