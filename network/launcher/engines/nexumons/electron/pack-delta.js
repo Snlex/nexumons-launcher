@@ -1,0 +1,11 @@
+const fs=require('fs'),path=require('path');const {checkedRelative}=require('./updates');
+const relative=f=>checkedRelative(f.folder+'/'+f.name);
+function writeJson(file,data){const tmp=file+'.new';fs.writeFileSync(tmp,JSON.stringify(data));fs.renameSync(tmp,file);}
+function installed(root){try{return JSON.parse(fs.readFileSync(path.join(root,'.academy-installed.json'),'utf8'));}catch{return null;}}
+function record(root,index,baseSha){writeJson(path.join(root,'.academy-installed.json'),{version:index.packVersion,baseSha,files:index.files.map(({name,folder,size,sha256})=>({name,folder,size,sha256}))});}
+function commitDelta(root,stage,index,previous,baseSha){const keep=new Set(index.files.map(relative)),backup=path.join(root,'.previous-update');fs.rmSync(backup,{recursive:true,force:true});fs.mkdirSync(backup,{recursive:true});const changed=[];const versionFile=path.join(root,'.academy-version'),metaFile=path.join(root,'.academy-installed.json');const priorVersion=fs.existsSync(versionFile)?fs.readFileSync(versionFile):null,priorMeta=fs.existsSync(metaFile)?fs.readFileSync(metaFile):null;
+ try{const candidates=new Set(index.files.filter(f=>fs.existsSync(path.join(stage,relative(f)))).map(relative));for(const f of previous.files||[])if(!keep.has(relative(f)))candidates.add(relative(f));for(const f of index.disabledFiles||[])if(f.name&&f.folder&&fs.existsSync(path.join(root,relative(f))))candidates.add(relative(f));
+ for(const rel of candidates){const target=path.join(root,rel),incoming=path.join(stage,rel),saved=path.join(backup,rel);fs.mkdirSync(path.dirname(target),{recursive:true});const had=fs.existsSync(target);if(had){fs.mkdirSync(path.dirname(saved),{recursive:true});fs.renameSync(target,saved);}changed.push({target,saved,had});if(fs.existsSync(incoming))fs.renameSync(incoming,target);}
+ record(root,index,baseSha);fs.writeFileSync(versionFile+'.new',index.packVersion);fs.renameSync(versionFile+'.new',versionFile);
+ }catch(e){for(const c of changed.reverse()){fs.rmSync(c.target,{force:true,recursive:true});if(c.had)fs.renameSync(c.saved,c.target);}if(priorVersion)fs.writeFileSync(versionFile,priorVersion);else fs.rmSync(versionFile,{force:true});if(priorMeta)fs.writeFileSync(metaFile,priorMeta);else fs.rmSync(metaFile,{force:true});throw e;}}
+module.exports={installed,record,commitDelta};

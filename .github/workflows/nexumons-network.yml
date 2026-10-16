@@ -1,0 +1,75 @@
+name: Nexumons Network launchers
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  native:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: windows-latest
+            target: '--win --x64'
+          - runner: macos-15
+            target: '--mac --arm64'
+          - runner: macos-15-intel
+            target: '--mac --x64'
+    runs-on: ${{ matrix.runner }}
+    defaults:
+      run:
+        working-directory: network/launcher
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: network/launcher/package-lock.json
+      - run: npm ci --no-audit --no-fund
+      - run: npm test
+      - run: npx electron-builder ${{ matrix.target }} --publish never
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+      - name: Verify Windows selector and both server engines
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $env:NETWORK_NATIVE_REPORT = Join-Path $env:RUNNER_TEMP 'network-native.json'
+          $exe = Get-ChildItem dist/*portable.exe | Select-Object -First 1
+          if (!$exe) { throw 'Portable executable missing' }
+          node test/native-smoke.js $exe.FullName
+          if ($LASTEXITCODE -ne 0) { throw 'Native interface test failed' }
+      - name: Sign and verify Mac selector and both server engines
+        if: runner.os == 'macOS'
+        run: |
+          bundle=$(find dist -maxdepth 3 -name 'Nexumons Network.app' -type d | head -1)
+          xattr -cr "$bundle"
+          codesign --force --deep --sign - "$bundle"
+          codesign --verify --deep --strict "$bundle"
+          export NETWORK_NATIVE_REPORT="$RUNNER_TEMP/network-native.json"
+          node test/native-smoke.js "$bundle/Contents/MacOS/Nexumons Network"
+          arch=$(node -p process.arch)
+          ditto -c -k --sequesterRsrc --keepParent "$bundle" "dist/Nexumons-Network-1.0.0-mac-${arch}-fixed.zip"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: network-${{ matrix.runner }}
+          path: |
+            network/launcher/dist/*.exe
+            network/launcher/dist/*fixed.zip
+            ${{ runner.temp }}/network-native.json
+  release:
+    needs: native
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: native
+      - name: Publish tested installers
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view nexumons-network-1.0.0 --repo "$GITHUB_REPOSITORY" || gh release create nexumons-network-1.0.0 --repo "$GITHUB_REPOSITORY" --title 'Nexumons & Cobbloria — Launcher commun 1.0.0' --notes-file network/RELEASE.md --latest=false
+          find native -type f \( -name '*.exe' -o -name '*fixed.zip' \) -exec gh release upload nexumons-network-1.0.0 --repo "$GITHUB_REPOSITORY" --clobber '{}' +

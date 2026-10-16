@@ -1,0 +1,21 @@
+{
+  "files": {
+    "build/background.jpg": "4120ff135f56f5da978ff2be7c2ac7b3ee8833fecf93a0c575bd6def9732984e",
+    "build/icon.png": "56481d0c4c6b8b2e94f821f9f0434881a9230cdfc198a10ee9a0ee850811763d",
+    "build/index.html": "f50973fc7ec3f0b7ba7b93bfbbfc91ad23008be57189d7db56dea8d8da5b879b",
+    "build/interface.css": "4dfa0f8df0d43599e790f7840c9017b6f79fddca8ed1a6343c87ef62a06d7dad",
+    "build/interface.js": "675fac1044d85b6b657d33add0fcf0d7a6e7822911b869cb372972de65b9d475",
+    "build/logo.png": "3ea93d2b9d31701f212971c44538ad8f7bd6cb03d54807c1db442305fd3b0186",
+    "electron/client-index.json": "2222c50f0f249160287f66270170a97543bdb31ab5b3ef46c295c090676d4688",
+    "electron/download.js": "22a77b87102a9cefd22225d99ef2b876a136489639a025fede36b5b5dd4b6723",
+    "electron/main.js": "49af6db3a0c757d0d75792e015fdb4a27589ae2e94cd3794741f9cce32b9bb9c",
+    "electron/offline-auth.js": "1e737b9ae1646712ad9ab7bdd3a0a6c1164b1ee7f5c86c27c4e1bb78479b7d27",
+    "electron/pack-delta.js": "e063622c1b939a78b17d98a9771a3c3a47d2d4d33c55dc9701527b00c86207d4",
+    "electron/pack.js": "9c11b70215a3621aa1f870adb398656dbf96f654130650a271937fd2f7ac5426",
+    "electron/preload.js": "308955c2586e6f4c83e9cdea4137067744f8dd7fd98b5ace2bedadd7a0ec4add",
+    "electron/profile.js": "2cdfbd8a4da583d0824b5ed89cc3aeb8342697cd894ef6e7d2f67c26c289f26c",
+    "electron/safe-extract.js": "94315a8089068e47bce6820f0685b59a9b815f37a6b7bbbf06c6ec0c936ea967",
+    "electron/updates.js": "3e23149a0081f85fc0aa7b8ef8f1d6f5c68986a6cd3ca0b3fae80f4a0ddb432f",
+    "electron/verified-files.js": "1eae4c56b4050294eee0e98f4a88a950013f22a635af57d23a584c57b2b8ce43"
+  }
+}

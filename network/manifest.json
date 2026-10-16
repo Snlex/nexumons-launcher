@@ -1,0 +1,7 @@
+{
+  "channel": "network",
+  "engineVersion": "1.0.0",
+  "appVersion": "1.0.0",
+  "appUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-network-app-1.0.0/Nexumons-Network-app-1.0.0.zip",
+  "appSha256": "5230bd7187ab1e2d905be9076d40918afffbcd7dff8ebd960a68d5422f0072d8"
+}
