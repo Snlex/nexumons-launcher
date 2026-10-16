@@ -1,6 +1,6 @@
 {
   "minecraft": "1.21.1",
-  "packVersion": "2.7.0-nexumons-java21-r24",
+  "packVersion": "2.7.0-nexumons-java21-r25",
   "files": [
     {
       "projectId": 32274,
@@ -2997,6 +2997,40 @@
       "environment": "*",
       "modId": "nexumons_adventure",
       "modVersion": "1.25.0"
+    },
+    {
+      "name": "cobblemon-battle-extras-fabric-1.13.45.jar",
+      "folder": "mods",
+      "url": "https://cdn.modrinth.com/data/2iY8VFqL/versions/Sf5W9mRS/cobblemon-battle-extras-fabric-1.13.45.jar",
+      "sha256": "099c3dafd5c7d29e8d91f954a9598565fdd07dac235bb9c49ab305d9af37f826",
+      "size": 1515972,
+      "modId": "cobblemon-battle-extras",
+      "modVersion": "1.13.45",
+      "environment": "*"
+    },
+    {
+      "name": "JourneyPAC-fabric-1.21-1.1.7.jar",
+      "folder": "mods",
+      "url": "https://cdn.modrinth.com/data/UUErFmkX/versions/xRCVCZjC/JourneyPAC-fabric-1.21-1.1.7.jar",
+      "sha256": "040944a78ce25de0eeed54aec6f8c418886b6e4683d0309538b86104f0352d76",
+      "size": 37401,
+      "modId": "journeypac",
+      "modVersion": "1.1.7",
+      "environment": "client"
+    },
+    {
+      "name": "Nexumons-Journey-Mounts-1.7.2.zip",
+      "folder": "resourcepacks",
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r25/Nexumons-Journey-Mounts-1.7.2.zip",
+      "sha256": "8e18e9590ff24d8c9a298aec0a5579bef3e11404a14a762a5b5f3bc67d050f15",
+      "size": 1172273
+    },
+    {
+      "name": "resourcepackoverrides.json",
+      "folder": "config",
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r25/resourcepackoverrides.json",
+      "sha256": "02dab9099e2d2f58d0700388e9e73b30cff2b5efa87b2a7ac93bcafc113e9989",
+      "size": 988
     }
   ],
   "fabric": "0.18.1",
@@ -3014,5 +3048,6 @@
       "modId": "c2me",
       "modVersion": "0.3.0+alpha.0.362+1.21.1"
     }
-  ]
+  ],
+  "fileCount": 237
 }
