@@ -1,9 +1,9 @@
 {
   "channel": "nexumons-academy",
   "engineVersion": "1.0.0",
-  "appVersion": "1.0.22",
-  "appUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-app-1.0.22/Nexumons-Academy-app-1.0.22.zip",
-  "appSha256": "f2b32473f502479e7f6f4baf3363da71e3335bfa3f6e200c0e8256e70690d9a6",
+  "appVersion": "1.0.23",
+  "appUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-app-1.0.23/Nexumons-Academy-app-1.0.23.zip",
+  "appSha256": "6719de1602109bdabc0065fd76aefdb37e03b884dc107ee2885330e934da2c5a",
   "minecraft": "1.21.1",
   "fabric": "0.18.1",
   "java": 21,
