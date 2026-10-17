@@ -1,6 +1,6 @@
 {
   "minecraft": "1.21.1",
-  "packVersion": "2.7.0-nexumons-java21-r26",
+  "packVersion": "2.7.0-nexumons-java21-r27",
   "files": [
     {
       "projectId": 60089,
@@ -3042,6 +3042,31 @@
       "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r26/fabric_loader_dependencies.json",
       "sha256": "845c83e014d705d8ec9e5974a15fadebda2c1e12e2fd745555ebe1b35dcdbb10",
       "size": 470
+    },
+    {
+      "name": "mega_showdown-fabric-1.2.0+1.8.1+1.21.1-release.jar",
+      "folder": "mods",
+      "url": "https://cdn.modrinth.com/data/SszvX85I/versions/TKdAixuR/mega_showdown-fabric-1.2.0%2B1.8.1%2B1.21.1-release.jar",
+      "sha256": "d724243bdfdd12c266ddf5f5fa0df36c68a759258f015469ed1c405f3ba261a7",
+      "size": 20152218,
+      "modId": "mega_showdown",
+      "modVersion": "1.2.0+1.8.1+1.21.1-release"
+    },
+    {
+      "name": "accessories-fabric-1.1.0-beta.54+1.21.1.jar",
+      "folder": "mods",
+      "url": "https://cdn.modrinth.com/data/jtmvUHXj/versions/YZ9RWTNl/accessories-fabric-1.1.0-beta.54%2B1.21.1.jar",
+      "sha256": "5edab210a283ac66ae1126adf8f43d7f30a8bdcf54ee5fafcf127ad5ddbb0a2a",
+      "size": 1103673,
+      "modId": "accessories",
+      "modVersion": "1.1.0-beta.54+1.21.1"
+    },
+    {
+      "folder": "datapacks",
+      "name": "zzz_Nexumons-Mega-Compat.zip",
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r27/zzz_Nexumons-Mega-Compat.zip",
+      "sha256": "eba5b58b9625bd497087b3e368fa6f012b8a67a6f74f6294939cf61d9f1cb605",
+      "size": 13838
     }
   ],
   "fabric": "0.19.5",
@@ -3106,5 +3131,5 @@
       "environment": "client"
     }
   ],
-  "fileCount": 239
+  "fileCount": 242
 }
