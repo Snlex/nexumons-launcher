@@ -17,8 +17,13 @@ test('Les ajouts montures et combats conservent CCC 2.2 et refusent les configur
 });
 
 
-test('JourneyPAC complète la carte existante sans ajouter une seconde carte',()=>{
- const jp=index.files.find(f=>f.modId==='journeypac');assert(jp&&jp.modVersion==='1.1.7'&&jp.environment==='client');
- assert(index.files.some(f=>f.modId==='journeymap'));assert(index.files.some(f=>f.modId==='openpartiesandclaims'));
- assert(!index.files.some(f=>/xaero(minimap|worldmap)/i.test(f.modId||'')));
+test('Xaero remplace JourneyMap et conserve les claims et les données de carte',()=>{
+ assert(index.files.some(f=>f.modId==='xaerominimap'));assert(index.files.some(f=>f.modId==='xaeroworldmap'));
+ assert(!index.files.some(f=>['journeymap','journeypac','jmi'].includes(f.modId)));
+ assert(index.files.some(f=>f.modId==='openpartiesandclaims'));
+ assert(index.disabledFiles.some(f=>f.modId==='journeymap'));
+ assert(index.files.some(f=>f.modId==='sophisticatedbackpacks'));assert(index.files.some(f=>f.modId==='sophisticatedcore'));
+ assert(index.files.some(f=>f.modId==='cobblemon_battle_pass_client'));assert(index.files.some(f=>f.name==='fabric_loader_dependencies.json'));
+ const {managed}=require('../electron/pack');assert(!managed.includes('journeymap'));
 });
+

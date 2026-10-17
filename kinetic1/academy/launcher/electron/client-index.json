@@ -1,20 +1,7 @@
 {
   "minecraft": "1.21.1",
-  "packVersion": "2.7.0-nexumons-java21-r25",
+  "packVersion": "2.7.0-nexumons-java21-r26",
   "files": [
-    {
-      "projectId": 32274,
-      "fileId": 6550376,
-      "name": "journeymap-fabric-1.21.1-6.0.0-beta.47.jar",
-      "size": 3503348,
-      "url": "https://mediafilez.forgecdn.net/files/6550/376/journeymap-fabric-1.21.1-6.0.0-beta.47.jar",
-      "fallbackUrl": "https://www.curseforge.com/api/v1/mods/32274/files/6550376/download",
-      "folder": "mods",
-      "sha256": "847ac470216f46e9d3f1757e4eee752c0b62675bc23ca8b1c60a040fcf61e30a",
-      "environment": "*",
-      "modId": "journeymap",
-      "modVersion": "1.21.1-6.0.0-beta.47"
-    },
     {
       "projectId": 60089,
       "fileId": 5437294,
@@ -885,19 +872,6 @@
       "environment": "*",
       "modId": "drippyloadingscreen",
       "modVersion": "3.1.0"
-    },
-    {
-      "projectId": 525447,
-      "fileId": 6508945,
-      "name": "jmi-fabric-1.21.1-1.9.jar",
-      "size": 309698,
-      "url": "https://mediafilez.forgecdn.net/files/6508/945/jmi-fabric-1.21.1-1.9.jar",
-      "fallbackUrl": "https://www.curseforge.com/api/v1/mods/525447/files/6508945/download",
-      "folder": "mods",
-      "sha256": "55fd7df4257d2bff9b1814bbaeab589a67f31a547ebd0fd30bdee298142c1c1d",
-      "environment": "*",
-      "modId": "jmi",
-      "modVersion": "1.21.1-1.9"
     },
     {
       "projectId": 532610,
@@ -2989,16 +2963,6 @@
       "modVersion": "1.5.0+1.21.1"
     },
     {
-      "name": "nexumons-adventure-1.25.0.jar",
-      "size": 5236751,
-      "sha256": "fec4d0261338149f52b382639222c166be0b91eac6b6ccdacbbaaad067532e7d",
-      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-adventure-1.25.0/nexumons-adventure-1.25.0.jar",
-      "folder": "mods",
-      "environment": "*",
-      "modId": "nexumons_adventure",
-      "modVersion": "1.25.0"
-    },
-    {
       "name": "cobblemon-battle-extras-fabric-1.13.45.jar",
       "folder": "mods",
       "url": "https://cdn.modrinth.com/data/2iY8VFqL/versions/Sf5W9mRS/cobblemon-battle-extras-fabric-1.13.45.jar",
@@ -3007,16 +2971,6 @@
       "modId": "cobblemon-battle-extras",
       "modVersion": "1.13.45",
       "environment": "*"
-    },
-    {
-      "name": "JourneyPAC-fabric-1.21-1.1.7.jar",
-      "folder": "mods",
-      "url": "https://cdn.modrinth.com/data/UUErFmkX/versions/xRCVCZjC/JourneyPAC-fabric-1.21-1.1.7.jar",
-      "sha256": "040944a78ce25de0eeed54aec6f8c418886b6e4683d0309538b86104f0352d76",
-      "size": 37401,
-      "modId": "journeypac",
-      "modVersion": "1.1.7",
-      "environment": "client"
     },
     {
       "name": "Nexumons-Journey-Mounts-1.7.2.zip",
@@ -3031,9 +2985,66 @@
       "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r25/resourcepackoverrides.json",
       "sha256": "02dab9099e2d2f58d0700388e9e73b30cff2b5efa87b2a7ac93bcafc113e9989",
       "size": 988
+    },
+    {
+      "name": "xaerominimap-fabric-1.21.1-26.6.0.jar",
+      "folder": "mods",
+      "url": "https://cdn.modrinth.com/data/1bokaNcj/versions/W4dcLcUs/xaerominimap-fabric-1.21.1-26.6.0.jar",
+      "sha256": "86bdc4282a73ed55e6a4903a7ba65940a6aed20404f7ab7c96f8d94078accd1b",
+      "size": 2234556,
+      "modId": "xaerominimap",
+      "modVersion": "26.6.0",
+      "environment": "*"
+    },
+    {
+      "name": "xaeroworldmap-fabric-1.21.1-1.47.0.jar",
+      "folder": "mods",
+      "url": "https://cdn.modrinth.com/data/NcUtCpym/versions/XIR7GzC3/xaeroworldmap-fabric-1.21.1-1.47.0.jar",
+      "sha256": "3e8211e02681f8bc17e1a066b3fcffddfa969cff03f48a5400016f587ba5f8f2",
+      "size": 1456162,
+      "modId": "xaeroworldmap",
+      "modVersion": "1.47.0",
+      "environment": "*"
+    },
+    {
+      "name": "sophisticatedbackpacks-1.21.1-3.23.4.3.106.jar",
+      "folder": "mods",
+      "url": "https://cdn.modrinth.com/data/ouNrBQtq/versions/nHhuPdda/sophisticatedbackpacks-1.21.1-3.23.4.3.106.jar",
+      "sha256": "2c099bfd5dc02ace6e73ffd9259940b0597cd4da7216a53a2c60c6732900d6aa",
+      "size": 988478,
+      "modId": "sophisticatedbackpacks",
+      "modVersion": "1.21.1-3.23.4.3.106",
+      "environment": "*"
+    },
+    {
+      "name": "cobblemon-battle-pass-client-1.0.6.jar",
+      "folder": "mods",
+      "url": "https://mediafilez.forgecdn.net/files/8706/400/cobblemon-battle-pass-client-1.0.6.jar",
+      "sha256": "7c51b0bb271afb6404a7b6f6ce7684c9840fb77cdee3f12d06e89d649d68d815",
+      "size": 35539,
+      "modId": "cobblemon_battle_pass_client",
+      "modVersion": "1.0.6",
+      "environment": "client"
+    },
+    {
+      "name": "nexumons-adventure-1.26.0.jar",
+      "folder": "mods",
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r26/nexumons-adventure-1.26.0.jar",
+      "sha256": "5a327d5d94b361195bf1bcdca69d5dd8b0a1bbb0d6230b599db641b6d5e9fb0b",
+      "size": 5255927,
+      "modId": "nexumons_adventure",
+      "modVersion": "1.26.0",
+      "environment": "*"
+    },
+    {
+      "name": "fabric_loader_dependencies.json",
+      "folder": "config",
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r26/fabric_loader_dependencies.json",
+      "sha256": "845c83e014d705d8ec9e5974a15fadebda2c1e12e2fd745555ebe1b35dcdbb10",
+      "size": 470
     }
   ],
-  "fabric": "0.18.1",
+  "fabric": "0.19.5",
   "disabledFiles": [
     {
       "projectId": 533097,
@@ -3047,7 +3058,53 @@
       "environment": "*",
       "modId": "c2me",
       "modVersion": "0.3.0+alpha.0.362+1.21.1"
+    },
+    {
+      "projectId": 32274,
+      "fileId": 6550376,
+      "name": "journeymap-fabric-1.21.1-6.0.0-beta.47.jar",
+      "size": 3503348,
+      "url": "https://mediafilez.forgecdn.net/files/6550/376/journeymap-fabric-1.21.1-6.0.0-beta.47.jar",
+      "fallbackUrl": "https://www.curseforge.com/api/v1/mods/32274/files/6550376/download",
+      "folder": "mods",
+      "sha256": "847ac470216f46e9d3f1757e4eee752c0b62675bc23ca8b1c60a040fcf61e30a",
+      "environment": "*",
+      "modId": "journeymap",
+      "modVersion": "1.21.1-6.0.0-beta.47"
+    },
+    {
+      "projectId": 525447,
+      "fileId": 6508945,
+      "name": "jmi-fabric-1.21.1-1.9.jar",
+      "size": 309698,
+      "url": "https://mediafilez.forgecdn.net/files/6508/945/jmi-fabric-1.21.1-1.9.jar",
+      "fallbackUrl": "https://www.curseforge.com/api/v1/mods/525447/files/6508945/download",
+      "folder": "mods",
+      "sha256": "55fd7df4257d2bff9b1814bbaeab589a67f31a547ebd0fd30bdee298142c1c1d",
+      "environment": "*",
+      "modId": "jmi",
+      "modVersion": "1.21.1-1.9"
+    },
+    {
+      "name": "nexumons-adventure-1.25.0.jar",
+      "size": 5236751,
+      "sha256": "fec4d0261338149f52b382639222c166be0b91eac6b6ccdacbbaaad067532e7d",
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-adventure-1.25.0/nexumons-adventure-1.25.0.jar",
+      "folder": "mods",
+      "environment": "*",
+      "modId": "nexumons_adventure",
+      "modVersion": "1.25.0"
+    },
+    {
+      "name": "JourneyPAC-fabric-1.21-1.1.7.jar",
+      "folder": "mods",
+      "url": "https://cdn.modrinth.com/data/UUErFmkX/versions/xRCVCZjC/JourneyPAC-fabric-1.21-1.1.7.jar",
+      "sha256": "040944a78ce25de0eeed54aec6f8c418886b6e4683d0309538b86104f0352d76",
+      "size": 37401,
+      "modId": "journeypac",
+      "modVersion": "1.1.7",
+      "environment": "client"
     }
   ],
-  "fileCount": 237
+  "fileCount": 239
 }
