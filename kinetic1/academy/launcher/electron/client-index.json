@@ -1,6 +1,6 @@
 {
   "minecraft": "1.21.1",
-  "packVersion": "2.7.0-nexumons-java21-r29",
+  "packVersion": "2.7.0-nexumons-java21-r30",
   "files": [
     {
       "projectId": 60089,
@@ -3027,13 +3027,13 @@
       "environment": "client"
     },
     {
-      "name": "nexumons-adventure-1.27.0.jar",
+      "name": "nexumons-adventure-1.30.0.jar",
       "folder": "mods",
-      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r29/nexumons-adventure-1.27.0.jar",
-      "sha256": "3110a2482453e9246dbccbd09a1aba8d898abb1a052bc3d807f763debb47de56",
-      "size": 5283438,
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r30/nexumons-adventure-1.30.0.jar",
+      "sha256": "af55bb40ce4cb3fe92b401566047bc4f4a4366da7ad489861a37192d9e73cafd",
+      "size": 5380690,
       "modId": "nexumons_adventure",
-      "modVersion": "1.26.0",
+      "modVersion": "1.30.0",
       "environment": "*"
     },
     {
@@ -3067,6 +3067,16 @@
       "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r27/zzz_Nexumons-Mega-Compat.zip",
       "sha256": "eba5b58b9625bd497087b3e368fa6f012b8a67a6f74f6294939cf61d9f1cb605",
       "size": 13838
+    },
+    {
+      "name": "nexumons-pokemon-inspection-1.0.0.jar",
+      "folder": "mods",
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r30/nexumons-pokemon-inspection-1.0.0.jar",
+      "sha256": "7beccec234d1cef8931c50ec636e9dfbc1c22440b3f417acf4824568b210af87",
+      "size": 13151,
+      "modId": "nexumons_inspection",
+      "modVersion": "1.0.0",
+      "environment": "*"
     }
   ],
   "fabric": "0.19.5",
@@ -3131,5 +3141,5 @@
       "environment": "client"
     }
   ],
-  "fileCount": 242
+  "fileCount": 243
 }
