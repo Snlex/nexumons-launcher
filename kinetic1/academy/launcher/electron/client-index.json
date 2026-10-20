@@ -1,6 +1,6 @@
 {
   "minecraft": "1.21.1",
-  "packVersion": "2.7.0-nexumons-java21-r30",
+  "packVersion": "2.7.0-nexumons-java21-r31",
   "files": [
     {
       "projectId": 60089,
@@ -3077,6 +3077,26 @@
       "modId": "nexumons_inspection",
       "modVersion": "1.0.0",
       "environment": "*"
+    },
+    {
+      "name": "catchrate-display-fabric-2.12.3.jar",
+      "size": 293930,
+      "sha256": "2a94e8c4a65f68b1632830ea4c814e074b1e09f6483744ed3a46e94eec95d3c7",
+      "url": "https://www.cursemaven.com/curse/maven/cobblemon-catch-rate-display-1450604/8931928/cobblemon-catch-rate-display-1450604-8931928.jar",
+      "folder": "mods",
+      "environment": "client",
+      "modId": "catchrate-display",
+      "modVersion": "2.12.3"
+    },
+    {
+      "name": "cobbleloots-fabric-2.3.0.jar",
+      "size": 267234,
+      "sha256": "36a53bcec0880bf34f5240ac0d707579eecbe527a93cfa3e202f20d166c68c24",
+      "url": "https://cdn.modrinth.com/data/kcudYghD/versions/XCKU1Qpp/cobbleloots-fabric-2.3.0.jar",
+      "folder": "mods",
+      "environment": "*",
+      "modId": "cobbleloots",
+      "modVersion": "2.3.0"
     }
   ],
   "fabric": "0.19.5",
@@ -3141,5 +3161,5 @@
       "environment": "client"
     }
   ],
-  "fileCount": 243
+  "fileCount": 245
 }

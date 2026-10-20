@@ -1,14 +1,14 @@
 {
   "channel": "nexumons-academy",
   "engineVersion": "1.0.0",
-  "appVersion": "1.0.31",
-  "appUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-app-1.0.31/Nexumons-Academy-app-1.0.31.zip",
-  "appSha256": "9ef90aca6e9219a3d4a97330681fce533a64920724cb105a3615a44639fbfb05",
+  "appVersion": "1.0.32",
+  "appUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-app-1.0.32/Nexumons-Academy-app-1.0.32.zip",
+  "appSha256": "4f7651aa9ee5e32c495539c0151acd47cc0e46961d98378d962610489ce681f2",
   "minecraft": "1.21.1",
   "fabric": "0.18.1",
   "java": 21,
   "serverAddress": "172.255.205.132:25565",
-  "packVersion": "2.7.0-nexumons-java21-r30",
+  "packVersion": "2.7.0-nexumons-java21-r31",
   "downloads": {
     "windows": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-launcher-1.0.17/Nexumons-Academy-1.0.17-win-x64-setup.exe",
     "windowsPortable": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-launcher-1.0.17/Nexumons-Academy-1.0.17-win-x64-portable.exe",
@@ -16,6 +16,6 @@
     "macIntel": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-launcher-1.0.17/Nexumons-Academy-1.0.17-mac-x64-fixed.zip"
   },
   "runtimeFabric": "0.19.5",
-  "mrpackUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-mrpack-r30/Nexumons-Academy-r30.mrpack",
-  "mrpackSha256": "e3ad94658b25db96590ebe7816822143a057739a4a557703367b6e2c00c786f3"
+  "mrpackUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-mrpack-r31/Nexumons-Academy-r31.mrpack",
+  "mrpackSha256": "40dc49c7db8e0b31e4bd46dc088234fa961184cb7652e026ee698397daae3712"
 }
