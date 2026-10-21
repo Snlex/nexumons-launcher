@@ -1,6 +1,6 @@
 {
   "minecraft": "1.21.1",
-  "packVersion": "2.7.0-nexumons-java21-r31",
+  "packVersion": "2.7.0-nexumons-java21-r32",
   "files": [
     {
       "projectId": 60089,
@@ -3097,6 +3097,54 @@
       "environment": "*",
       "modId": "cobbleloots",
       "modVersion": "2.3.0"
+    },
+    {
+      "projectId": "rctmod",
+      "fileId": "rgfBfnW9",
+      "name": "rctmod-fabric-1.21.1-0.19.2-beta.jar",
+      "size": 6807725,
+      "url": "https://cdn.modrinth.com/data/lRwTUnD7/versions/rgfBfnW9/rctmod-fabric-1.21.1-0.19.2-beta.jar",
+      "folder": "mods",
+      "sha256": "2e3d2c61012900fcf5a957e29676269958facca593debc7a9e095138546acb0a",
+      "environment": "*",
+      "modId": "rctmod",
+      "modVersion": "0.19.2-beta"
+    },
+    {
+      "projectId": "cobbledgacha",
+      "fileId": "kqpoF9m4",
+      "name": "cobbledgacha-fabric-1.21.1-3.0.3.jar",
+      "size": 1148291,
+      "url": "https://cdn.modrinth.com/data/c1OpnQs3/versions/kqpoF9m4/cobbledgacha-fabric-1.21.1-3.0.3.jar",
+      "folder": "mods",
+      "sha256": "1eea99f3433331f667adac58af51401b9866cccaa30286dbd56031358f888838",
+      "environment": "*",
+      "modId": "cobbledgacha",
+      "modVersion": "3.0.3"
+    },
+    {
+      "projectId": "modrinth-v19DG9nW",
+      "fileId": "Srt2YL8E",
+      "name": "cobblemon_battle_tower-fabric-1.11.23.jar",
+      "size": 52072791,
+      "url": "https://cdn.modrinth.com/data/v19DG9nW/versions/Srt2YL8E/cobblemon_battle_tower-fabric-1.11.23.jar",
+      "folder": "mods",
+      "sha256": "3e0c349f989a6103f9aaa072bec5ed805ccbbe6c159be94f958dd4b2fdbadd97",
+      "environment": "*",
+      "modId": "cobblemon_battle_tower",
+      "modVersion": "1.11.23"
+    },
+    {
+      "projectId": "modrinth-v7VZE8kh",
+      "fileId": "GoEGm1Ea",
+      "name": "wild_battle_api-fabric-1.1.2.jar",
+      "size": 253029,
+      "url": "https://cdn.modrinth.com/data/v7VZE8kh/versions/GoEGm1Ea/wild_battle_api-fabric-1.1.2.jar",
+      "folder": "mods",
+      "sha256": "c25fee08e90ed8d28d2a0051f892bae28e1d6d8522c523131bd7dcbef9bcd0a8",
+      "environment": "*",
+      "modId": "wild_battle_api",
+      "modVersion": "1.1.2"
     }
   ],
   "fabric": "0.19.5",
@@ -3161,5 +3209,5 @@
       "environment": "client"
     }
   ],
-  "fileCount": 245
+  "fileCount": 249
 }
