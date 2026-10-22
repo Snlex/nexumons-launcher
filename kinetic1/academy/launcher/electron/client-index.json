@@ -1,6 +1,6 @@
 {
   "minecraft": "1.21.1",
-  "packVersion": "2.7.0-nexumons-java21-r35",
+  "packVersion": "2.7.0-nexumons-java21-r36",
   "files": [
     {
       "projectId": 60089,
@@ -3159,30 +3159,10 @@
     {
       "name": "resourcepackoverrides.json",
       "folder": "config",
-      "size": 905,
-      "sha256": "edbfe9b1b33853115d979863a0b53bf3804cf3f5a0a4adc5ddcdd600648ff4b8",
-      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r34/resourcepackoverrides.json",
+      "size": 887,
+      "sha256": "842264a8d249f498a92f757f912f6c051893576c8514fb7b8d4e6fa82728c8c2",
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r36/resourcepackoverrides.json",
       "environment": "client"
-    },
-    {
-      "projectId": "modrinth-odZZdRCE",
-      "fileId": "2JPClXSG",
-      "name": "ATM x MSD [v4.0].zip",
-      "size": 8115647,
-      "url": "https://cdn.modrinth.com/data/odZZdRCE/versions/2JPClXSG/ATM%20x%20MSD%20%5Bv4.0%5D.zip",
-      "folder": "resourcepacks",
-      "sha256": "999a52c4713582683e64e7045633490a6d121858366068a9c4b0d128bbd518bb",
-      "environment": "*"
-    },
-    {
-      "projectId": "modrinth-odZZdRCE",
-      "fileId": "2JPClXSG",
-      "name": "ATM x MSD [v4.0].zip",
-      "size": 8115647,
-      "url": "https://cdn.modrinth.com/data/odZZdRCE/versions/2JPClXSG/ATM%20x%20MSD%20%5Bv4.0%5D.zip",
-      "folder": "datapacks",
-      "sha256": "999a52c4713582683e64e7045633490a6d121858366068a9c4b0d128bbd518bb",
-      "environment": "*"
     },
     {
       "projectId": "modrinth-vZ8CfI8h",
@@ -3192,6 +3172,26 @@
       "url": "https://cdn.modrinth.com/data/vZ8CfI8h/versions/r25EiaMi/extra-eeveelutions-1.2.jar",
       "folder": "mods",
       "sha256": "a40f2cdce076b709cd14ac5d2a5d660f32512115528ed6d5d7b80c1a071b637a",
+      "environment": "*"
+    },
+    {
+      "projectId": "nexumons-restored-ccc",
+      "fileId": "r36",
+      "name": "CCC_2.2.zip",
+      "size": 17086174,
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r36/CCC_2.2.zip",
+      "folder": "resourcepacks",
+      "sha256": "380c6be6e5207f0f786525f17515aab138895f7c6a01e81e440e1632b8f486a9",
+      "environment": "*"
+    },
+    {
+      "projectId": "nexumons-restored-ccc",
+      "fileId": "r36",
+      "name": "CCC_2.2.zip",
+      "size": 3669617,
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r36/CCC_2.2-data.zip",
+      "folder": "datapacks",
+      "sha256": "773d6e0d4220ad719e91cb0c47c9eaae12ea5161b6850ae30bd9fc50ded7e6d4",
       "environment": "*"
     }
   ],
@@ -3265,14 +3265,6 @@
       "name": "Journey Mounts 1.7.2.zip"
     },
     {
-      "folder": "resourcepacks",
-      "name": "CCC_2.2.zip"
-    },
-    {
-      "folder": "datapacks",
-      "name": "CCC_2.2.zip"
-    },
-    {
       "folder": "datapacks",
       "name": "CCC_2.2"
     },
@@ -3283,6 +3275,14 @@
     {
       "folder": "config",
       "name": "enhanced_bes.properties"
+    },
+    {
+      "folder": "resourcepacks",
+      "name": "ATM x MSD [v4.0].zip"
+    },
+    {
+      "folder": "datapacks",
+      "name": "ATM x MSD [v4.0].zip"
     }
   ],
   "fileCount": 253
