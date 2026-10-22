@@ -1,6 +1,6 @@
 {
   "minecraft": "1.21.1",
-  "packVersion": "2.7.0-nexumons-java21-r32",
+  "packVersion": "2.7.0-nexumons-java21-r33",
   "files": [
     {
       "projectId": 60089,
@@ -2975,9 +2975,9 @@
     {
       "name": "Nexumons-Journey-Mounts-1.7.2.zip",
       "folder": "resourcepacks",
-      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r28/Nexumons-Journey-Mounts-1.7.2.zip",
-      "sha256": "af4f8b76c473b2a43cf2a29f0be85bac33b5958f8ba3eaf31eecb22f2b52f153",
-      "size": 1108354
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r33/Nexumons-Journey-Mounts-1.7.2.zip",
+      "sha256": "84441dccd10a70b5aa8ed14d3548d0d4c81b0220280acf406ffbcfb78cd0744d",
+      "size": 1110256
     },
     {
       "name": "resourcepackoverrides.json",
