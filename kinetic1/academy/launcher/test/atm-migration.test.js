@@ -1,0 +1,14 @@
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('fs'),os=require('os'),path=require('path'),crypto=require('crypto');
+const {installPack}=require('../electron/pack');const live=require('../electron/client-index.json');
+for(const mode of ['full','delta'])test(`Migration ${mode}: retire CCC archive et dossier, conserve sauvegardes et réglages`,async()=>{
+ const root=fs.mkdtempSync(path.join(os.tmpdir(),'nexumons-atm-'));const digest=crypto.createHash('sha256').update('x').digest('hex');const index=structuredClone(live);for(const f of index.files){f.size=1;f.sha256=digest;f.url='https://example.invalid/'+encodeURIComponent(f.name);delete f.fallbackUrl;}
+ const profile={packSha256:'a'.repeat(64),minecraft:'1.21.1',packUrl:'https://example.invalid/base.zip'};
+ try{
+  for(const dir of ['resourcepacks','datapacks/CCC_2.2','saves/base','config'])fs.mkdirSync(path.join(root,dir),{recursive:true});
+  fs.writeFileSync(path.join(root,'resourcepacks/CCC_2.2.zip'),'old');fs.writeFileSync(path.join(root,'datapacks/CCC_2.2/pack.mcmeta'),'old');fs.writeFileSync(path.join(root,'saves/base/level.dat'),'keep-world');fs.writeFileSync(path.join(root,'config/nexumons-journal.json'),'{"x":0.2}');
+  if(mode==='delta')fs.writeFileSync(path.join(root,'.academy-installed.json'),JSON.stringify({baseSha:profile.packSha256,files:[],version:'old'}));
+  else{const source=path.join(root,'.downloads/official');fs.mkdirSync(path.join(source,'overrides/datapacks/CCC_2.2'),{recursive:true});fs.mkdirSync(path.join(source,'overrides/resourcepacks'),{recursive:true});fs.mkdirSync(path.join(source,'overrides/config'),{recursive:true});fs.writeFileSync(path.join(source,'.source-sha256'),profile.packSha256);fs.writeFileSync(path.join(source,'manifest.json'),JSON.stringify({minecraft:{version:'1.21.1',modLoaders:[{id:'fabric-0.18.1'}]}}));fs.writeFileSync(path.join(source,'overrides/datapacks/CCC_2.2/pack.mcmeta'),'old');fs.writeFileSync(path.join(source,'overrides/resourcepacks/CCC_2.2.zip'),'old');}
+  await installPack({root,index,profile,status:()=>{},download:async(url,dest)=>{fs.mkdirSync(path.dirname(dest),{recursive:true});fs.writeFileSync(dest,'x');}});
+  assert(fs.existsSync(path.join(root,'mods/extra-eeveelutions-1.2.jar')));assert(!fs.existsSync(path.join(root,'resourcepacks/CCC_2.2.zip')));assert(!fs.existsSync(path.join(root,'datapacks/CCC_2.2')));assert(fs.existsSync(path.join(root,'resourcepacks/ATM x MSD [v4.0].zip')));assert(fs.existsSync(path.join(root,'datapacks/ATM x MSD [v4.0].zip')));assert.equal(fs.readFileSync(path.join(root,'saves/base/level.dat'),'utf8'),'keep-world');assert.equal(JSON.parse(fs.readFileSync(path.join(root,'config/nexumons-journal.json'))).x,0.2);
+ }finally{fs.rmSync(root,{recursive:true,force:true});}
+});

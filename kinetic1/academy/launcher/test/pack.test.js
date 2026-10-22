@@ -10,7 +10,7 @@ test('Une mise à jour conserve les réglages personnels du suivi',()=>{const ro
 
 test('Les ajouts montures et combats conservent CCC 2.2 et refusent les configurations non prévues',()=>{
  validateIndex(index);assert(index.files.some(f=>f.modId==='cobblemon-battle-extras'&&f.modVersion==='1.13.45'));
- assert(index.files.some(f=>f.folder==='resourcepacks'&&f.name==='Nexumons-Journey-Mounts-1.7.2.zip'));
+ assert(!index.files.some(f=>f.folder==='resourcepacks'&&f.name==='Nexumons-Journey-Mounts-1.7.2.zip'));assert(index.files.some(f=>f.modId==='cobblemon_riding_tweaks'&&f.modVersion==='1.3.0'));assert(index.disabledFiles.some(f=>f.folder==='resourcepacks'&&f.name==='Nexumons-Journey-Mounts-1.7.2.zip'));
  assert(!index.files.some(f=>f.name.includes('CCC_1.9.2')));
  const duplicate=structuredClone(index);duplicate.files.push(duplicate.files[0]);duplicate.fileCount++;assert.throws(()=>validateIndex(duplicate));
  const bad=structuredClone(index);const config=bad.files.find(f=>f.folder==='config');assert(config);config.name='options.txt';assert.throws(()=>validateIndex(bad));

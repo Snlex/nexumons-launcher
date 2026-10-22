@@ -1,6 +1,6 @@
 {
   "minecraft": "1.21.1",
-  "packVersion": "2.7.0-nexumons-java21-r33",
+  "packVersion": "2.7.0-nexumons-java21-r34",
   "files": [
     {
       "projectId": 60089,
@@ -2973,20 +2973,6 @@
       "environment": "*"
     },
     {
-      "name": "Nexumons-Journey-Mounts-1.7.2.zip",
-      "folder": "resourcepacks",
-      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r33/Nexumons-Journey-Mounts-1.7.2.zip",
-      "sha256": "84441dccd10a70b5aa8ed14d3548d0d4c81b0220280acf406ffbcfb78cd0744d",
-      "size": 1110256
-    },
-    {
-      "name": "resourcepackoverrides.json",
-      "folder": "config",
-      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r25/resourcepackoverrides.json",
-      "sha256": "02dab9099e2d2f58d0700388e9e73b30cff2b5efa87b2a7ac93bcafc113e9989",
-      "size": 988
-    },
-    {
       "name": "xaerominimap-fabric-1.21.1-26.6.0.jar",
       "folder": "mods",
       "url": "https://cdn.modrinth.com/data/1bokaNcj/versions/W4dcLcUs/xaerominimap-fabric-1.21.1-26.6.0.jar",
@@ -3145,6 +3131,88 @@
       "environment": "*",
       "modId": "wild_battle_api",
       "modVersion": "1.1.2"
+    },
+    {
+      "projectId": "modrinth-LQ3K71Q1",
+      "fileId": "GBH14HiF",
+      "name": "dynamic-fps-3.11.4+minecraft-1.21.0-fabric.jar",
+      "size": 217532,
+      "url": "https://cdn.modrinth.com/data/LQ3K71Q1/versions/GBH14HiF/dynamic-fps-3.11.4%2Bminecraft-1.21.0-fabric.jar",
+      "folder": "mods",
+      "sha256": "f66b13835282603bd6f8902faa5142e1311bb6393496b04a5df7008415b2fdf8",
+      "environment": "client",
+      "modId": "dynamic_fps",
+      "modVersion": "3.11.4"
+    },
+    {
+      "projectId": "modrinth-OVuFYfre",
+      "fileId": "HBZAPs3u",
+      "name": "enhancedblockentities-0.10.2+1.21.jar",
+      "size": 201157,
+      "url": "https://cdn.modrinth.com/data/OVuFYfre/versions/HBZAPs3u/enhancedblockentities-0.10.2%2B1.21.jar",
+      "folder": "mods",
+      "sha256": "61396ddd5990ae8177165492067c4b02e2ebacbd7be3e97eb37a46aae13c9679",
+      "environment": "client",
+      "modId": "enhancedblockentities",
+      "modVersion": "0.10.2+1.21"
+    },
+    {
+      "projectId": 1592779,
+      "fileId": 8977726,
+      "name": "cobblemon_riding_tweaks-fabric-1.21.1-1.3.0.jar",
+      "size": 159396,
+      "url": "https://mediafilez.forgecdn.net/files/8977/726/cobblemon_riding_tweaks-fabric-1.21.1-1.3.0.jar",
+      "folder": "mods",
+      "sha256": "fab674b4ea3b85bcc2a22ec7643b55cdd287ec291f7b3ff542a1d7504e08f9b4",
+      "environment": "*",
+      "modId": "cobblemon_riding_tweaks",
+      "modVersion": "1.3.0"
+    },
+    {
+      "name": "resourcepackoverrides.json",
+      "folder": "config",
+      "size": 905,
+      "sha256": "edbfe9b1b33853115d979863a0b53bf3804cf3f5a0a4adc5ddcdd600648ff4b8",
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r34/resourcepackoverrides.json",
+      "environment": "client"
+    },
+    {
+      "name": "enhanced_bes.properties",
+      "folder": "config",
+      "size": 107,
+      "sha256": "bfea9c7b48e5e50cc1629aa55be7a4f5a8380cc6a02bc4edcc519d39f3970a12",
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r34/enhanced_bes.properties",
+      "environment": "client"
+    },
+    {
+      "projectId": "modrinth-odZZdRCE",
+      "fileId": "2JPClXSG",
+      "name": "ATM x MSD [v4.0].zip",
+      "size": 8115647,
+      "url": "https://cdn.modrinth.com/data/odZZdRCE/versions/2JPClXSG/ATM%20x%20MSD%20%5Bv4.0%5D.zip",
+      "folder": "resourcepacks",
+      "sha256": "999a52c4713582683e64e7045633490a6d121858366068a9c4b0d128bbd518bb",
+      "environment": "*"
+    },
+    {
+      "projectId": "modrinth-odZZdRCE",
+      "fileId": "2JPClXSG",
+      "name": "ATM x MSD [v4.0].zip",
+      "size": 8115647,
+      "url": "https://cdn.modrinth.com/data/odZZdRCE/versions/2JPClXSG/ATM%20x%20MSD%20%5Bv4.0%5D.zip",
+      "folder": "datapacks",
+      "sha256": "999a52c4713582683e64e7045633490a6d121858366068a9c4b0d128bbd518bb",
+      "environment": "*"
+    },
+    {
+      "projectId": "modrinth-vZ8CfI8h",
+      "fileId": "r25EiaMi",
+      "name": "extra-eeveelutions-1.2.jar",
+      "size": 809201,
+      "url": "https://cdn.modrinth.com/data/vZ8CfI8h/versions/r25EiaMi/extra-eeveelutions-1.2.jar",
+      "folder": "mods",
+      "sha256": "a40f2cdce076b709cd14ac5d2a5d660f32512115528ed6d5d7b80c1a071b637a",
+      "environment": "*"
     }
   ],
   "fabric": "0.19.5",
@@ -3207,7 +3275,27 @@
       "modId": "journeypac",
       "modVersion": "1.1.7",
       "environment": "client"
+    },
+    {
+      "folder": "resourcepacks",
+      "name": "Nexumons-Journey-Mounts-1.7.2.zip"
+    },
+    {
+      "folder": "datapacks",
+      "name": "Journey Mounts 1.7.2.zip"
+    },
+    {
+      "folder": "resourcepacks",
+      "name": "CCC_2.2.zip"
+    },
+    {
+      "folder": "datapacks",
+      "name": "CCC_2.2.zip"
+    },
+    {
+      "folder": "datapacks",
+      "name": "CCC_2.2"
     }
   ],
-  "fileCount": 249
+  "fileCount": 255
 }
