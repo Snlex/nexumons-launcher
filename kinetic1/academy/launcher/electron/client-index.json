@@ -1,6 +1,6 @@
 {
   "minecraft": "1.21.1",
-  "packVersion": "2.7.0-nexumons-java21-r36",
+  "packVersion": "2.7.0-nexumons-java21-r37",
   "files": [
     {
       "projectId": 60089,
@@ -3013,16 +3013,6 @@
       "environment": "client"
     },
     {
-      "name": "nexumons-adventure-1.30.0.jar",
-      "folder": "mods",
-      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r30/nexumons-adventure-1.30.0.jar",
-      "sha256": "af55bb40ce4cb3fe92b401566047bc4f4a4366da7ad489861a37192d9e73cafd",
-      "size": 5380690,
-      "modId": "nexumons_adventure",
-      "modVersion": "1.30.0",
-      "environment": "*"
-    },
-    {
       "name": "fabric_loader_dependencies.json",
       "folder": "config",
       "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r26/fabric_loader_dependencies.json",
@@ -3157,14 +3147,6 @@
       "modVersion": "1.3.0"
     },
     {
-      "name": "resourcepackoverrides.json",
-      "folder": "config",
-      "size": 887,
-      "sha256": "842264a8d249f498a92f757f912f6c051893576c8514fb7b8d4e6fa82728c8c2",
-      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r36/resourcepackoverrides.json",
-      "environment": "client"
-    },
-    {
       "projectId": "modrinth-vZ8CfI8h",
       "fileId": "r25EiaMi",
       "name": "extra-eeveelutions-1.2.jar",
@@ -3193,6 +3175,78 @@
       "folder": "datapacks",
       "sha256": "773d6e0d4220ad719e91cb0c47c9eaae12ea5161b6850ae30bd9fc50ded7e6d4",
       "environment": "*"
+    },
+    {
+      "name": "nexumons-adventure-1.57.0.jar",
+      "folder": "mods",
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r37/nexumons-adventure-1.57.0.jar",
+      "sha256": "ebefbcec8354942b97b44c20bc4c4b07fad863022122c9ab52ae055c77bb1755",
+      "size": 5777317,
+      "environment": "*",
+      "projectId": "nexumons-card-collection",
+      "fileId": "r37",
+      "modId": "nexumons_adventure",
+      "modVersion": "1.57.0"
+    },
+    {
+      "name": "Nexumons-Card-Collection-r37.zip",
+      "folder": "resourcepacks",
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r37/Nexumons-Card-Collection-r37.zip",
+      "sha256": "30922b0cad6873ffa442513efb08fdbf1e968ec04b41013fa2175d5e62ea54b3",
+      "size": 24918,
+      "environment": "*",
+      "projectId": "nexumons-card-collection",
+      "fileId": "r37"
+    },
+    {
+      "name": "resourcepackoverrides.json",
+      "folder": "config",
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r37/resourcepackoverrides.json",
+      "sha256": "b3129b6b8f2a6d8d77d159cb70648fc8e77abd76de78e97589c8636b6c927afd",
+      "size": 1070,
+      "environment": "*",
+      "projectId": "nexumons-card-collection",
+      "fileId": "r37"
+    },
+    {
+      "name": "icons.json",
+      "folder": "config/academy/card",
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r37/icons.json",
+      "sha256": "51e2a9ec736a1ad669b811763081446e3ec342f83ee047a4ce1cd2984ea4069c",
+      "size": 59840,
+      "environment": "*",
+      "projectId": "nexumons-card-collection",
+      "fileId": "r37"
+    },
+    {
+      "name": "entries.json",
+      "folder": "config/academy/card",
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r37/entries.json",
+      "sha256": "94e278967ef573bd4bc77dca69aa3f680b6ca99ca8336eba6819259008879ddf",
+      "size": 147909,
+      "environment": "*",
+      "projectId": "nexumons-card-collection",
+      "fileId": "r37"
+    },
+    {
+      "name": "booster_packs.json",
+      "folder": "config/academy/card",
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r37/booster_packs.json",
+      "sha256": "21b0f144d9290f02428838a3cbaa23c8e7141bf559787c74b9f2e57668bc3c0b",
+      "size": 1195,
+      "environment": "*",
+      "projectId": "nexumons-card-collection",
+      "fileId": "r37"
+    },
+    {
+      "name": "albums.json",
+      "folder": "config/academy/card",
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r37/albums.json",
+      "sha256": "b7cab8fb6e0c09fa174b8fa02a9d2d3877630b3e150f91960e25e565f3b47760",
+      "size": 542,
+      "environment": "*",
+      "projectId": "nexumons-card-collection",
+      "fileId": "r37"
     }
   ],
   "fabric": "0.19.5",
@@ -3283,7 +3337,11 @@
     {
       "folder": "datapacks",
       "name": "ATM x MSD [v4.0].zip"
+    },
+    {
+      "folder": "mods",
+      "name": "nexumons-adventure-1.30.0.jar"
     }
   ],
-  "fileCount": 253
+  "fileCount": 258
 }
