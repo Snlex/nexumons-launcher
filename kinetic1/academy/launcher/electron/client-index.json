@@ -1,6 +1,6 @@
 {
   "minecraft": "1.21.1",
-  "packVersion": "2.7.0-nexumons-java21-r37",
+  "packVersion": "2.7.0-nexumons-java21-r38",
   "files": [
     {
       "projectId": 60089,
@@ -3177,33 +3177,11 @@
       "environment": "*"
     },
     {
-      "name": "nexumons-adventure-1.57.0.jar",
-      "folder": "mods",
-      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r37/nexumons-adventure-1.57.0.jar",
-      "sha256": "ebefbcec8354942b97b44c20bc4c4b07fad863022122c9ab52ae055c77bb1755",
-      "size": 5777317,
-      "environment": "*",
-      "projectId": "nexumons-card-collection",
-      "fileId": "r37",
-      "modId": "nexumons_adventure",
-      "modVersion": "1.57.0"
-    },
-    {
       "name": "Nexumons-Card-Collection-r37.zip",
       "folder": "resourcepacks",
       "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r37/Nexumons-Card-Collection-r37.zip",
       "sha256": "30922b0cad6873ffa442513efb08fdbf1e968ec04b41013fa2175d5e62ea54b3",
       "size": 24918,
-      "environment": "*",
-      "projectId": "nexumons-card-collection",
-      "fileId": "r37"
-    },
-    {
-      "name": "resourcepackoverrides.json",
-      "folder": "config",
-      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r37/resourcepackoverrides.json",
-      "sha256": "b3129b6b8f2a6d8d77d159cb70648fc8e77abd76de78e97589c8636b6c927afd",
-      "size": 1070,
       "environment": "*",
       "projectId": "nexumons-card-collection",
       "fileId": "r37"
@@ -3247,6 +3225,84 @@
       "environment": "*",
       "projectId": "nexumons-card-collection",
       "fileId": "r37"
+    },
+    {
+      "name": "nexumons-adventure-1.60.0.jar",
+      "folder": "mods",
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r38/nexumons-adventure-1.60.0.jar",
+      "sha256": "0758ef9c051aa15834ee9fb01be52bef572f4f3f7782f382cc92fedd723aca0e",
+      "size": 5843363,
+      "environment": "*",
+      "projectId": "nexumons-festival",
+      "fileId": "r38",
+      "modId": "nexumons_adventure",
+      "modVersion": "1.60.0"
+    },
+    {
+      "name": "resourcepackoverrides.json",
+      "folder": "config",
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r38/resourcepackoverrides.json",
+      "sha256": "b643f24c4034866a275414ea987c6ae90c29786d69818a18ff86d5185bc1b745",
+      "size": 1406,
+      "environment": "*",
+      "projectId": "nexumons-festival",
+      "fileId": "r38"
+    },
+    {
+      "name": "HalloweenCobblemon.zip",
+      "folder": "resourcepacks",
+      "url": "https://cdn.modrinth.com/data/jtffTkli/versions/u78lhicp/HalloweenCobblemon.zip",
+      "sha256": "e5aa0ec1ee8eb81fc0d4f2670b445dd956bdd0aefb77d42848ab5bfd393b5866",
+      "size": 290417,
+      "environment": "*",
+      "projectId": "nexumons-festival",
+      "fileId": "r38"
+    },
+    {
+      "name": "Hallowed-Mons-Festival.zip",
+      "folder": "resourcepacks",
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r38/Hallowed-Mons-Festival.zip",
+      "sha256": "de4bb73f66a6696ab6655a382f83142e57420e8b11c666195d1f8824b6d478d1",
+      "size": 273908,
+      "environment": "*",
+      "projectId": "nexumons-festival",
+      "fileId": "r38"
+    },
+    {
+      "name": "Cobblemon-Utility+-fabric-1.8.0.jar",
+      "folder": "mods",
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r38/Cobblemon-Utility+-fabric-1.8.0.jar",
+      "sha256": "4533822d90dd738d73d61f467448de53ab77f823e906f1d94fccd9cb5d4cbf9f",
+      "size": 180270,
+      "environment": "*",
+      "projectId": "nexumons-festival",
+      "fileId": "r38",
+      "modId": "cobblemon_utility",
+      "modVersion": "1.8.0"
+    },
+    {
+      "name": "nexumons-rare-treasures-1.0.0.jar",
+      "folder": "mods",
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r38/nexumons-rare-treasures-1.0.0.jar",
+      "sha256": "2f3846ffbd7b486268625dbb215638d6f2c2f68528b22fac2dce9bcc6c0fdaa1",
+      "size": 47011,
+      "environment": "*",
+      "projectId": "nexumons-festival",
+      "fileId": "r38",
+      "modId": "nexumons_rare_treasures",
+      "modVersion": "1.0.0"
+    },
+    {
+      "name": "CobblemonSizeVariationFabric-1.4.0+1.7.0.jar",
+      "folder": "mods",
+      "url": "https://cdn.modrinth.com/data/bMdS1gMo/versions/cJf7Izms/CobblemonSizeVariationFabric-1.4.0%2B1.7.0.jar",
+      "sha256": "2bad8880081c07ad2fcb68cca6fb0904e6887fe7286ada759ec0023698ebb8d6",
+      "size": 97158,
+      "environment": "*",
+      "projectId": "nexumons-festival",
+      "fileId": "r38",
+      "modId": "cobblemonsizevariation",
+      "modVersion": "1.4.0"
     }
   ],
   "fabric": "0.19.5",
@@ -3341,7 +3397,11 @@
     {
       "folder": "mods",
       "name": "nexumons-adventure-1.30.0.jar"
+    },
+    {
+      "folder": "mods",
+      "name": "nexumons-adventure-1.57.0.jar"
     }
   ],
-  "fileCount": 258
+  "fileCount": 263
 }

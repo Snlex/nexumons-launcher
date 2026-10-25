@@ -1,0 +1,2 @@
+const {test}=require('node:test');const assert=require('node:assert/strict');const fs=require('node:fs');const path=require('node:path');
+test('Rare treasures ships Fabric utility and matching extension once',()=>{const index=JSON.parse(fs.readFileSync(path.join(__dirname,'../electron/client-index.json')));for(const id of ['cobblemon_utility','nexumons_rare_treasures','cobblemonsizevariation'])assert.equal(index.files.filter(f=>f.modId===id).length,1);assert(!index.files.some(f=>/special-fossils|neoforge/i.test(f.name)&&/fossil|utility/i.test(f.name)));});
