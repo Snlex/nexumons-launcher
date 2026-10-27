@@ -1,6 +1,6 @@
 {
   "minecraft": "1.21.1",
-  "packVersion": "2.7.0-nexumons-java21-r38",
+  "packVersion": "2.7.0-nexumons-java21-r41",
   "files": [
     {
       "projectId": 60089,
@@ -3227,18 +3227,6 @@
       "fileId": "r37"
     },
     {
-      "name": "nexumons-adventure-1.60.0.jar",
-      "folder": "mods",
-      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r38/nexumons-adventure-1.60.0.jar",
-      "sha256": "0758ef9c051aa15834ee9fb01be52bef572f4f3f7782f382cc92fedd723aca0e",
-      "size": 5843363,
-      "environment": "*",
-      "projectId": "nexumons-festival",
-      "fileId": "r38",
-      "modId": "nexumons_adventure",
-      "modVersion": "1.60.0"
-    },
-    {
       "name": "resourcepackoverrides.json",
       "folder": "config",
       "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r38/resourcepackoverrides.json",
@@ -3303,6 +3291,30 @@
       "fileId": "r38",
       "modId": "cobblemonsizevariation",
       "modVersion": "1.4.0"
+    },
+    {
+      "name": "nexumons-adventure-1.63.0.jar",
+      "folder": "mods",
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r41/nexumons-adventure-1.63.0.jar",
+      "sha256": "2b0d5276d09424ede838602b8fab96c344178454d26ff92641236d934fca0cc0",
+      "size": 5897423,
+      "environment": "*",
+      "projectId": "nexumons-festival",
+      "fileId": "r41",
+      "modId": "nexumons_adventure",
+      "modVersion": "1.63.0"
+    },
+    {
+      "name": "fusionmon-0.1.3-beta.jar",
+      "folder": "mods",
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r41/fusionmon-0.1.3-beta.jar",
+      "sha256": "43351bae775b1c94e75423892325bb84adf78e9ab8789c3dd3e3c125327fd2f1",
+      "size": 320603,
+      "environment": "*",
+      "projectId": "1746117",
+      "fileId": "9290056",
+      "modId": "fusionmon",
+      "modVersion": "0.1.3-beta"
     }
   ],
   "fabric": "0.19.5",
@@ -3401,7 +3413,11 @@
     {
       "folder": "mods",
       "name": "nexumons-adventure-1.57.0.jar"
+    },
+    {
+      "folder": "mods",
+      "name": "nexumons-adventure-1.60.0.jar"
     }
   ],
-  "fileCount": 263
+  "fileCount": 264
 }
