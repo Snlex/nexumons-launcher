@@ -1,6 +1,6 @@
 {
   "minecraft": "1.21.1",
-  "packVersion": "2.7.0-nexumons-java21-r42",
+  "packVersion": "2.7.0-nexumons-java21-r43",
   "files": [
     {
       "projectId": 60089,
@@ -3305,16 +3305,16 @@
       "modVersion": "0.1.3-beta"
     },
     {
-      "name": "nexumons-adventure-1.64.0.jar",
+      "name": "nexumons-adventure-1.67.0.jar",
       "folder": "mods",
-      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r42/nexumons-adventure-1.64.0.jar",
-      "sha256": "66ce9182a418475e829d60367cea562488a7f6eb58729135aa83ff94cd5cca7a",
-      "size": 5908900,
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-academy-addons-r43/nexumons-adventure-1.67.0.jar",
+      "sha256": "a39e4fb18056b901b93c235e68ac101d68bb830159ec49b363878a0362e47e36",
+      "size": 10020921,
       "environment": "*",
-      "projectId": "nexumons-festival",
-      "fileId": "r42",
+      "projectId": "nexumons-pet-companions",
+      "fileId": "r43",
       "modId": "nexumons_adventure",
-      "modVersion": "1.64.0"
+      "modVersion": "1.67.0"
     }
   ],
   "fabric": "0.19.5",
@@ -3421,6 +3421,18 @@
     {
       "folder": "mods",
       "name": "nexumons-adventure-1.63.0.jar"
+    },
+    {
+      "folder": "mods",
+      "name": "nexumons-adventure-1.64.0.jar"
+    },
+    {
+      "folder": "mods",
+      "name": "nexumons-adventure-1.65.0.jar"
+    },
+    {
+      "folder": "mods",
+      "name": "nexumons-adventure-1.66.0.jar"
     }
   ],
   "fileCount": 264
