@@ -1,0 +1,125 @@
+name: Nexumons Exile native launchers
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: 'Publier la release GitHub (sinon : tests et artefacts seulement)'
+        type: boolean
+        default: false
+permissions:
+  contents: write
+env:
+  APP_VERSION: '1.0.0'
+jobs:
+  native:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: windows-latest
+            target: '--win --x64'
+          - runner: macos-15
+            target: '--mac --arm64'
+          - runner: macos-15-intel
+            target: '--mac --x64'
+    runs-on: ${{ matrix.runner }}
+    defaults:
+      run:
+        working-directory: kinetic2/exile/launcher
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: kinetic2/exile/launcher/package-lock.json
+      - run: npm ci --no-audit --no-fund
+      - run: npm test
+      - name: Install and verify the CTE2 client pack
+        if: runner.os == 'Windows'
+        run: node test/prepare-client.js
+      - uses: actions/setup-java@v4
+        if: runner.os == 'Windows'
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Start Forge with the full pack
+        if: runner.os == 'Windows'
+        run: JAVA17="$JAVA_HOME/bin/java" node test/launch-smoke.js
+      - name: Keep Forge launch log
+        if: always() && runner.os == 'Windows'
+        uses: actions/upload-artifact@v4
+        with:
+          name: forge-launch-log
+          path: ${{ runner.temp }}/launch-smoke.log
+          if-no-files-found: ignore
+      - run: npx electron-builder ${{ matrix.target }} --publish never
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+      - name: Verify Windows launcher opens
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $env:NEXUMONS_SMOKE_FILE = Join-Path $env:RUNNER_TEMP 'nexumons-smoke.json'
+          $exe = Get-ChildItem dist/*portable.exe | Select-Object -First 1
+          if (!$exe) { throw 'Portable executable missing' }
+          $process = Start-Process $exe.FullName -ArgumentList '--smoke-test' -PassThru
+          $deadline = (Get-Date).AddSeconds(85)
+          while (!(Test-Path $env:NEXUMONS_SMOKE_FILE) -and (Get-Date) -lt $deadline) { Start-Sleep -Seconds 2 }
+          if (!(Test-Path $env:NEXUMONS_SMOKE_FILE)) { Stop-Process -Id $process.Id -ErrorAction SilentlyContinue; throw 'Launcher did not load its interface' }
+          $result = Get-Content $env:NEXUMONS_SMOKE_FILE | ConvertFrom-Json
+          if (!$result.bridge -or !$result.play) { throw 'Interface or preload missing' }
+          Get-Content $env:NEXUMONS_SMOKE_FILE
+      - name: Sign and verify Mac application
+        if: runner.os == 'macOS'
+        run: |
+          bundle=$(find dist -maxdepth 3 -name 'Nexumons Exile.app' -type d | head -1)
+          codesign --force --deep --sign - "$bundle"
+          codesign --verify --deep --strict "$bundle"
+          export NEXUMONS_SMOKE_FILE="$RUNNER_TEMP/nexumons-smoke.json"
+          "$bundle/Contents/MacOS/Nexumons Exile" --smoke-test &
+          python3 - <<'PY'
+          import os,pathlib,time,json
+          p=pathlib.Path(os.environ['NEXUMONS_SMOKE_FILE'])
+          for _ in range(40):
+            if p.exists(): break
+            time.sleep(2)
+          if not p.exists(): raise SystemExit('Launcher did not load its interface')
+          d=json.loads(p.read_text());assert d['bridge'] and d['play'];print(d)
+          PY
+          arch=$(node -p process.arch)
+          ditto -c -k --sequesterRsrc --keepParent "$bundle" "dist/Nexumons-Exile-${APP_VERSION}-mac-${arch}.zip"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nexumons-exile-${{ matrix.runner }}
+          path: |
+            kinetic2/exile/launcher/dist/*.exe
+            kinetic2/exile/launcher/dist/Nexumons-Exile-*-mac-*.zip
+  release:
+    needs: native
+    if: inputs.publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: native
+          pattern: nexumons-exile-*
+          merge-multiple: true
+      - name: Package launcher application update
+        run: |
+          python3 - <<'PY'
+          import pathlib,zipfile,hashlib,json,os
+          root=pathlib.Path('kinetic2/exile/launcher');v=os.environ['APP_VERSION']
+          files={str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest() for d in ['electron','build'] for p in (root/d).rglob('*') if p.is_file()}
+          with zipfile.ZipFile(f'native/Nexumons-Exile-app-{v}.zip','w',zipfile.ZIP_DEFLATED) as z:
+            for p in files:z.write(root/p,p)
+            z.writestr('files.json',json.dumps({'files':files}))
+          print(hashlib.sha256(pathlib.Path(f'native/Nexumons-Exile-app-{v}.zip').read_bytes()).hexdigest())
+          PY
+      - name: Publish dedicated Exile release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "nexumons-exile-launcher-${APP_VERSION}" native/* --repo "$GITHUB_REPOSITORY" --latest=false --title "Nexumons Exile ${APP_VERSION}" --notes 'Launcher pour Kinetic 2 : Craft to Exile 2.1.4, Minecraft 1.20.1 Forge 47.4.23 et Java 17. Windows installateur et portable, Mac Intel et Apple Silicon. Mods téléchargés depuis CurseForge avec vérification des empreintes, mise à jour automatique via GitHub. Compte Microsoft ou pseudo (mot de passe en jeu). Application Mac signée ad hoc, sans notarisation Apple.'

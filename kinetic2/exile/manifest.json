@@ -1,0 +1,11 @@
+{
+  "channel": "nexumons-exile",
+  "engineVersion": "1.0.0",
+  "minecraft": "1.20.1",
+  "forge": "47.4.23",
+  "java": 17,
+  "serverAddress": "172.241.3.147:25585",
+  "appVersion": "1.0.0",
+  "appUrl": "",
+  "appSha256": ""
+}
