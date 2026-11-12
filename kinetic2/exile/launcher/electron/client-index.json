@@ -1,7 +1,7 @@
 {
   "minecraft": "1.20.1",
   "forge": "47.4.23",
-  "packVersion": "2.1.4-nexumons-r2",
+  "packVersion": "2.1.4-nexumons-r3",
   "files": [
     {
       "projectId": 623908,
@@ -644,12 +644,11 @@
     {
       "projectId": 1023333,
       "fileId": 7699589,
-      "name": "chatplus-forge-2.8.1.jar",
-      "size": 27070339,
-      "url": "https://mediafilez.forgecdn.net/files/7699/589/chatplus-forge-2.8.1.jar",
-      "fallbackUrl": "https://www.curseforge.com/api/v1/mods/1023333/files/7699589/download",
+      "name": "chatplus-forge-2.8.1-nexumons.jar",
+      "size": 27062567,
+      "url": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-exile-launcher-1.0.3/chatplus-forge-2.8.1-nexumons.jar",
       "folder": "mods",
-      "sha256": "f30736ebfbeb7f422401e780458ce23b0a9f6e97edef63151fa373becf90ea29",
+      "sha256": "e3a55c7b4d96ec038cf40d17b1cdad633994a4fb3d132feb6218d3fde44b729b",
       "required": true
     },
     {
@@ -4512,5 +4511,10 @@
     }
   ],
   "fileCount": 410,
-  "disabledFiles": []
+  "disabledFiles": [
+    {
+      "name": "chatplus-forge-2.8.1.jar",
+      "folder": "mods"
+    }
+  ]
 }

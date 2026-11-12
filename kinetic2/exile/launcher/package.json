@@ -1,6 +1,6 @@
 {
   "name": "nexumons-exile-launcher",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Launcher Nexumons — Craft to Exile 2",
   "main": "bootstrap.js",
   "license": "UNLICENSED",

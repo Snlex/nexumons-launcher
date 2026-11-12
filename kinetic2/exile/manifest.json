@@ -5,8 +5,8 @@
   "forge": "47.4.23",
   "java": 17,
   "serverAddress": "172.241.3.147:25585",
-  "appVersion": "1.0.2",
-  "appUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-exile-launcher-1.0.2/Nexumons-Exile-app-1.0.2.zip",
-  "appSha256": "3afe004ac3ff28734cfeecbcc08b9e34f7a557733f91b299878ce58f346aab7d",
-  "packVersion": "2.1.4-nexumons-r2"
+  "appVersion": "1.0.3",
+  "appUrl": "https://github.com/Snlex/nexumons-launcher/releases/download/nexumons-exile-launcher-1.0.3/Nexumons-Exile-app-1.0.3.zip",
+  "appSha256": "d9eade1911c266eafc9a8b678c75f940be6fbabdeaffa3415f945c644de35d7e",
+  "packVersion": "2.1.4-nexumons-r3"
 }
